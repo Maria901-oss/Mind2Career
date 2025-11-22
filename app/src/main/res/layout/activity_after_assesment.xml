@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AfterAssesment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="210dp"
+            android:id="@+id/whoo"
+            android:src="@drawable/after"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text1"
+            android:layout_gravity="center"
+            android:text="Whoo! we found your interest"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#B3000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text2"
+            android:text="Are you excited to see you roadmap"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            />
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn1"
+            android:layout_gravity="center"
+            android:text="Go to home"
+            android:backgroundTint="#BA9AB2"
+            android:layout_marginTop="24dp"
+            />
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn2"
+            android:layout_gravity="center"
+            android:text="View roadmap"
+            android:backgroundTint="#7516B5"
+            android:layout_marginTop="12dp"
+            />
+
+
+    </LinearLayout>
+
+</ScrollView>
