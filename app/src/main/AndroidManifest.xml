@@ -13,10 +13,10 @@
         android:theme="@style/Theme.Mind2Career">
         <activity
             android:name=".ResumeUpload"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".AfterAssesment"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
