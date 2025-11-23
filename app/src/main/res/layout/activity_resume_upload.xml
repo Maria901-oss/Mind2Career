@@ -11,22 +11,39 @@
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Discover Your Professional Profile"
+        android:text="Discover Your"
         android:textSize="20sp"
         android:textColor="#000000"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="70dp" />
+    <TextView
+        android:id="@+id/titleText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Professional Profile"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_gravity="center" />
 
     <TextView
         android:id="@+id/subtitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let us know your skills by uploading your CV"
+        android:text="Let us know your skills by uploading"
         android:textSize="14sp"
         android:textColor="#B3000000"
         android:layout_gravity="center"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="20dp" />
+    <TextView
+        android:id="@+id/subtitleText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="your CV"
+        android:textSize="14sp"
+        android:textColor="#B3000000"
+        android:layout_gravity="center" />
 
     <Button
         android:id="@+id/uploadButton"
@@ -36,7 +53,7 @@
         android:textAllCaps="false"
         android:textSize="14sp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="100dp" />
 
 
 </LinearLayout>
