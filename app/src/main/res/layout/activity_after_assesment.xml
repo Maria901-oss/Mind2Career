@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/text2"
-            android:text="Are you excited to see you roadmap"
+            android:text="Are you excited to see your roadmap?"
             android:textColor="#000000"
             android:textSize="18dp"
             android:layout_marginTop="50dp"
