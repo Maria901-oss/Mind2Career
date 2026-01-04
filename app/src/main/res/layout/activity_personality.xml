@@ -22,6 +22,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#000000"
+            android:layout_marginTop="30dp"
             android:gravity="center" />
 
         <TextView
@@ -61,7 +62,7 @@
             android:layout_height="50dp"
             android:text="Attempt"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#7B1FA2"
+            android:backgroundTint="#7516B5"
             android:textSize="16sp"
             android:layout_marginBottom="24dp"
             android:layout_gravity="center"

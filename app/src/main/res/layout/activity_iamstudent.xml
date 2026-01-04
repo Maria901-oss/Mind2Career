@@ -10,7 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <!-- Top Illustration -->
         <ImageView
@@ -48,7 +52,7 @@
             android:id="@+id/btnStudent"
             android:layout_width="260dp"
             android:layout_height="55dp"
-            android:backgroundTint="@color/light_purple"
+            android:backgroundTint="#BA9AB2"
             android:text="Student"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -59,7 +63,7 @@
             android:id="@+id/btnGraduate"
             android:layout_width="260dp"
             android:layout_height="55dp"
-            android:backgroundTint="@color/dark_purple"
+            android:backgroundTint="#7516B5"
             android:text="Graduate"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -70,7 +74,7 @@
             android:id="@+id/btnProfessional"
             android:layout_width="260dp"
             android:layout_height="55dp"
-            android:backgroundTint="@color/light_purple"
+            android:backgroundTint="#BA9AB2"
             android:text="Professional"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
