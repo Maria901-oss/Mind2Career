@@ -15,10 +15,10 @@
             android:name=".personality"
             android:exported="false" />
         <activity
-            android:name=".iamstudent"
+            android:name=".setprofile"
             android:exported="false" />
         <activity
-            android:name=".sidra1"
+            android:name=".onboarding4"
             android:exported="false" />
         <activity
             android:name=".ResumeUpload"

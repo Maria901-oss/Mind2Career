@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#FF000000</color>
+    <color name="secondary">#777777</color>
+    <color name="secondarytext">#FFFFFFFF</color>
     <color name="dark_purple">#5F0149</color>
     <color name="light_purple">#E05384</color>
+    <color name="buttons">#BA9AB2</color>
+    <color name="button">#7516B5</color>
+    <color name="dropshadow">#7516B5</color>
 </resources>

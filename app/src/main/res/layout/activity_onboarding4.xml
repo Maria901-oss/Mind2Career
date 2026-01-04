@@ -5,17 +5,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sidra1">
+    tools:context=".onboarding4">
     <TextView
         android:id="@+id/titleOnboard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Discover your path and \nstep into the future with \nfull confidence"
+        android:layout_marginTop="20dp"
+        android:text="Discover your path and \nstep into the future with
+        \nfull confidence"
         android:textAlignment="center"
         android:textSize="22sp"
         android:textStyle="bold"
         android:lineSpacingExtra="4dp"
-        android:textColor="@color/light_purple"
+        android:textColor="@color/primary"
+        android:shadowColor="@color/dropshadow"
+        android:shadowDx="0.5"
+        android:shadowDy="0.5"
+        android:shadowRadius="1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -35,24 +41,26 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"/>
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSignIn"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Sign In"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="200dp" />
-
-    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignUp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:backgroundTint="#C88F9A"
+        android:backgroundTint="@color/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="120dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        app:layout_constraintBottom_toTopOf="@id/btnSignUp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/buttons"
+        android:layout_marginBottom="12dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

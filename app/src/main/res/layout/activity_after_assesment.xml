@@ -27,13 +27,13 @@
             android:text="Whoo! we found your interest"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="#B3000000"/>
+            android:textColor="@color/secondary"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/text2"
             android:text="Are you excited to see your roadmap?"
-            android:textColor="#000000"
+            android:textColor="@color/primary"
             android:textSize="18dp"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="15dp"
@@ -44,7 +44,7 @@
             android:id="@+id/btn1"
             android:layout_gravity="center"
             android:text="Go to home"
-            android:backgroundTint="#BA9AB2"
+            android:backgroundTint="@color/buttons"
             android:layout_marginTop="24dp"
             />
         <Button
@@ -53,7 +53,7 @@
             android:id="@+id/btn2"
             android:layout_gravity="center"
             android:text="View roadmap"
-            android:backgroundTint="#7516B5"
+            android:backgroundTint="@color/button"
             android:layout_marginTop="12dp"
             />
 
