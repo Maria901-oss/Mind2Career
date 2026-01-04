@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mind2Career">
         <activity
+            android:name=".personality"
+            android:exported="false" />
+        <activity
+            android:name=".iamstudent"
+            android:exported="false" />
+        <activity
+            android:name=".sidra1"
+            android:exported="false" />
+        <activity
             android:name=".ResumeUpload"
             android:exported="false" />
         <activity

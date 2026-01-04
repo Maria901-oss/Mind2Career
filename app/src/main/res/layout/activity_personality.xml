@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".personality">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discover your"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="personality type"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Subheading -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Take a quick personality test to understand your strength, work style and careers that suit you best"
+            android:textSize="23sp"
+            android:layout_marginTop="30dp"
+            android:textColor="#777777"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Image -->
+        <ImageView
+            android:id="@+id/personalityImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/picp"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAttempt"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Attempt"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#7B1FA2"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center"
+            android:clipToOutline="true"
+            android:layout_marginTop="50dp"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
