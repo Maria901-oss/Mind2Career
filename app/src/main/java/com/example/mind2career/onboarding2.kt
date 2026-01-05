@@ -18,9 +18,5 @@ class onboarding2 : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val next=findViewById<Button>(R.id.next)
-        next.setOnClickListener {
-            val intent= Intent(this, onboarding3::class.java)
-            startActivity(intent)
     }
 }
