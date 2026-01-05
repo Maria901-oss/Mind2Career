@@ -8,4 +8,7 @@
     <color name="buttons">#BA9AB2</color>
     <color name="button">#7516B5</color>
     <color name="dropshadow">#7516B5</color>
+    <color name="text">#FF666666</color>
+    <color name="sub">#6C6C6C</color>
+    <color name="btn">#FF6200EE</color>
 </resources>

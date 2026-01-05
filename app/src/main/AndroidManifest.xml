@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mind2Career">
         <activity
+            android:name=".onboarding3"
+            android:exported="false" />
+        <activity
+            android:name=".onboarding2"
+            android:exported="false" />
+        <activity
             android:name=".personality"
             android:exported="false" />
         <activity
