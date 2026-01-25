@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "431582287694",
+    "project_id": "mind2career",
+    "storage_bucket": "mind2career.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431582287694:android:3dff1ff75a69ada836b01f",
+        "android_client_info": {
+          "package_name": "com.example.mind2career"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6j2qTqleu6nrOq49ThWzINzFR_2RhUpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

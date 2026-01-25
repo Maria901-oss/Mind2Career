@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Mind2Career</string>
-        <string name="find_your_purpose">Find your purpose</string>
-        <string name="shape_your_future">Shape your future</string>
-        <string name="next">Next</string>
-        <string name="illustration_description">Purpose and future illustration</string>
+    <string name="find_your_purpose">Find your purpose</string>
+    <string name="shape_your_future">Shape your future</string>
+    <string name="next">Next</string>
+    <string name="illustration_description">Purpose and future illustration</string>
 </resources>
