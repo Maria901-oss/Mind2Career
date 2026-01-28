@@ -12,7 +12,20 @@
           "package_name": "com.example.mind2career"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "431582287694-t7qg2o2th8f5m0oa3qndd2jo8v8bnuj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mind2career",
+            "certificate_hash": "e75c02e73eeb3b97b0978253c8f30656d1a78d84"
+          }
+        },
+        {
+          "client_id": "431582287694-g3lg44msd6oj1p11qkij6ld6t1rm90pc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD6j2qTqleu6nrOq49ThWzINzFR_2RhUpE"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431582287694-g3lg44msd6oj1p11qkij6ld6t1rm90pc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
