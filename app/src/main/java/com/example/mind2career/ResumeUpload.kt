@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -53,40 +52,40 @@ class ResumeUpload : AppCompatActivity() {
             val text = PDFTextStripper().getText(document)
             document.close()
 
-            val extractedData = extractEducationSkillsAddress(text)
+            val extractedData = extractResumeData(text)
             saveToFirestore(extractedData)
 
-        } catch (e: Exception) {
-            Toast.makeText(this, "PDF read failed", Toast.LENGTH_SHORT).show()
+        } catch (_: Exception) {
+            // Silent fail, no Toast
         }
     }
 
-    private fun extractEducationSkillsAddress(text: String): HashMap<String, Any> {
+    private fun extractResumeData(text: String): HashMap<String, Any> {
         val data = HashMap<String, Any>()
 
-        val skillKeywords = listOf(
-            "Java", "Kotlin", "Python", "C++",
-            "Android", "Firebase", "SQL", "Machine Learning"
+        // Extract skills dynamically: words that start with capital letters and are not common words
+        val skillRegex = Regex("\\b([A-Z][a-zA-Z0-9#+]+)\\b")
+        val skills = skillRegex.findAll(text)
+            .map { it.value }
+            .filter { it.length > 1 } // remove single letters
+            .toSet()
+            .toList()
+
+        // Extract education dynamically
+        val educationRegex = Regex(
+            "\\b(Bachelor|Master|BS|BSc|MS|MSc|Intermediate|FSc|High School|Matric)\\b",
+            RegexOption.IGNORE_CASE
         )
+        val education = educationRegex.findAll(text)
+            .map { it.value }
+            .toSet()
+            .toList()
 
-        val educationKeywords = listOf(
-            "BS", "BSc", "Bachelor", "MS", "MSc",
-            "Intermediate", "FSc", "Matric"
-        )
-
-        val skills = skillKeywords.filter {
-            text.contains(it, ignoreCase = true)
-        }
-
-        val education = educationKeywords.filter {
-            text.contains(it, ignoreCase = true)
-        }
-
+        // Extract address dynamically
         val addressRegex = Regex(
             "(House|Street|Road|Sector|Block|City|Pakistan)[^\\n]+",
             RegexOption.IGNORE_CASE
         )
-
         val address = addressRegex.find(text)?.value ?: "not found"
 
         data["skills"] = skills
@@ -97,21 +96,10 @@ class ResumeUpload : AppCompatActivity() {
     }
 
     private fun saveToFirestore(data: HashMap<String, Any>) {
-        val userId = auth.currentUser?.uid
-
-        if (userId == null) {
-            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
-            return
-        }
+        val userId = auth.currentUser?.uid ?: return
 
         firestore.collection("resumes")
             .document(userId)
             .set(data)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Resume data saved", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Database error", Toast.LENGTH_SHORT).show()
-            }
     }
 }
