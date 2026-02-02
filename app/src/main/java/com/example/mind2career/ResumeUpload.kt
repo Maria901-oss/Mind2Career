@@ -81,16 +81,8 @@ class ResumeUpload : AppCompatActivity() {
             .toSet()
             .toList()
 
-        // Extract address dynamically
-        val addressRegex = Regex(
-            "(House|Street|Road|Sector|Block|City|Pakistan)[^\\n]+",
-            RegexOption.IGNORE_CASE
-        )
-        val address = addressRegex.find(text)?.value ?: "not found"
-
         data["skills"] = skills
         data["education"] = education
-        data["address"] = address
 
         return data
     }
