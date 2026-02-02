@@ -24,7 +24,7 @@ class QuestionAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuestionViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.questions, parent, false)
+            .inflate(R.layout.personalityquestions, parent, false)
         return QuestionViewHolder(view)
     }
 
