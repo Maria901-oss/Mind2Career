@@ -11,4 +11,6 @@
     <color name="text">#FF666666</color>
     <color name="sub">#6C6C6C</color>
     <color name="btn">#FF6200EE</color>
+    <color name="nav_check">#E826C1</color>
+    <color name="uncheck">#565656</color>565656
 </resources>

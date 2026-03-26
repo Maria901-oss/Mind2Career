@@ -15,6 +15,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mind2Career">
         <activity
+            android:name=".RankingScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileScreen"
+            android:exported="false" />
+        <activity
+            android:name=".TransitionScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SkillGapScreen"
+            android:exported="false" />
+        <activity
+            android:name=".home_activity"
+            android:exported="false" />
+        <activity
+            android:name=".RecommendationScreen"
+            android:exported="false" />
+        <activity
             android:name=".AcademicScreen"
             android:exported="false" />
         <activity

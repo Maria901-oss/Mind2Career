@@ -1,34 +1,20 @@
 package com.example.mind2career
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class AfterAssesment : AppCompatActivity() {
+class RankingScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_after_assesment)
+        setContentView(R.layout.activity_ranking_screen)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-        val btnHome = findViewById<Button>(R.id.btn1)
-        val btnRoadmap = findViewById<Button>(R.id.btn2)
-
-        btnHome.isEnabled = false
-        btnHome.isClickable = false
-        btnHome.alpha = 0.5f
-
-        btnRoadmap.setOnClickListener {
-            val intent= Intent(this, RecommendationScreen::class.java)
-            startActivity(intent)
-            finish()
         }
     }
 }
