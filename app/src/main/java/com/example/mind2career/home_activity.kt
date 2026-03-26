@@ -41,7 +41,7 @@ class home_activity : AppCompatActivity() {
 
         // SKILL GAP → Skill screen
         cardSkill.setOnClickListener {
-            startActivity(Intent(this, SkillGapActivity::class.java))
+            startActivity(Intent(this, SkillGapScreen::class.java))
         }
 
         // CAREER PLAN
