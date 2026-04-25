@@ -52,4 +52,5 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.tom-roush:pdfbox-android:2.0.27.0")
     implementation("org.tensorflow:tensorflow-lite:2.12.0")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 }

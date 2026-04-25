@@ -18,6 +18,10 @@ class personality : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        val getstarted=findViewById<Button>(R.id.btnAttempt)
+        getstarted.setOnClickListener {
+            val intent= Intent(this, PesonalityAssesment::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="@color/secondarytext">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Logo -->
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/signin"
+            android:contentDescription="App Logo"/>
+
+        <!-- Title -->
+        <TextView
+            android:text="Sign In"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Fill the form below to Login"
+            android:textSize="14sp"
+            android:textColor="@color/secondary"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:hint="Enter Email"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:padding="12dp"
+            android:background="@drawable/input_bg"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Password -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:hint="Enter Password"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:padding="12dp"
+            android:background="@drawable/input_bg"
+            android:inputType="textPassword"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Forgot Password -->
+        <TextView
+            android:id="@+id/tvForgot"
+            android:text="Forgot Password?"
+            android:textColor="@color/emailname"
+            android:textSize="14sp"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Sign In Button -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:text="Sign In"
+            android:textColor="@color/secondarytext"
+            android:textStyle="bold"
+            android:background="@drawable/round_purple_button"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"/>
+
+        <!-- OR -->
+        <TextView
+            android:text="Or"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Google Sign-In (Custom Layout for proper icon size) -->
+        <LinearLayout
+            android:id="@+id/btnGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/google_button_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="27dp"
+                android:contentDescription="Google Logo"
+                android:src="@drawable/google" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Continue with Google"
+                android:textColor="@color/primary"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Signup -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:text="Create a new Account? "
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvSignup"
+                android:text="Sign up"
+                android:textColor="@color/emailname"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

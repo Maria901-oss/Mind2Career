@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:paddingStart="20dp"
-    android:paddingEnd="20dp">
+    android:paddingEnd="20dp"
+    android:id="@+id/main">
     <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
@@ -49,10 +50,12 @@
     <ProgressBar
         android:id="@+id/pbar"
         android:layout_width="0dp"
-        android:layout_height="8dp"
+        android:layout_height="12dp"
         android:max="100"
         android:progress="40"
         android:progressDrawable="@drawable/progress"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="24dp"
         style="?android:attr/progressBarStyleHorizontal"
         app:layout_constraintTop_toBottomOf="@id/ill"
@@ -63,13 +66,17 @@
     <Button
         android:id="@+id/next"
         android:layout_width="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_height="50dp"
         android:text="Next"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:background="@drawable/purlperound"
+        android:backgroundTint="@color/button"
+        android:textColor="@color/secondarytext"
         android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/pbar"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

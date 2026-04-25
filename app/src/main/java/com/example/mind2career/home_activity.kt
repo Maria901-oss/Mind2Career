@@ -36,7 +36,7 @@ class home_activity : AppCompatActivity() {
 
         // TEST → Personality Assessment
         cardTest.setOnClickListener {
-            startActivity(Intent(this, PesonalityAssesment::class.java))
+            startActivity(Intent(this, personality::class.java))
         }
 
         // SKILL GAP → Skill screen
@@ -69,7 +69,7 @@ class home_activity : AppCompatActivity() {
         // Bottom Navigation
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
 
-        bottomNav.setOnItemSelectedListener {
+        bottomNav.setOnItemSelectedListener {item ->
 
             when (item.itemId) {
 

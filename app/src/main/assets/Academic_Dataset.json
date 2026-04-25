@@ -1,0 +1,3613 @@
+{
+  "matric": {
+    "physics": [
+      {
+        "id": "1",
+        "question": "A body moving in a circular path with constant speed has:",
+        "options": [
+          "No acceleration",
+          "Tangential acceleration",
+          "Centripetal acceleration",
+          "No force"
+        ],
+        "answer": "Centripetal acceleration"
+      },
+      {
+        "id": "2",
+        "question": "Work done by centripetal force is:",
+        "options": [
+          "Maximum",
+          "Minimum",
+          "Zero",
+          "Negative"
+        ],
+        "answer": "Zero"
+      },
+      {
+        "id": "3",
+        "question": "Newton’s third law applies to:",
+        "options": [
+          "Only motion",
+          "Only rest",
+          "All interactions",
+          "Only gravity"
+        ],
+        "answer": "All interactions"
+      },
+      {
+        "id": "4",
+        "question": "If net force is zero, object is:",
+        "options": [
+          "Accelerating",
+          "In circular motion",
+          "At rest or uniform motion",
+          "Decelerating"
+        ],
+        "answer": "At rest or uniform motion"
+      },
+      {
+        "id": "5",
+        "question": "Slope of distance-time graph represents:",
+        "options": [
+          "Acceleration",
+          "Force",
+          "Speed",
+          "Energy"
+        ],
+        "answer": "Speed"
+      },
+      {
+        "id": "6",
+        "question": "SI unit of force is:",
+        "options": [
+          "Joule",
+          "Newton",
+          "Watt",
+          "Pascal"
+        ],
+        "answer": "Newton"
+      },
+      {
+        "id": "7",
+        "question": "Energy stored in a stretched spring is:",
+        "options": [
+          "Kinetic",
+          "Potential",
+          "Thermal",
+          "Electrical"
+        ],
+        "answer": "Potential"
+      },
+      {
+        "id": "8",
+        "question": "Unit of power is:",
+        "options": [
+          "Newton",
+          "Joule",
+          "Watt",
+          "Volt"
+        ],
+        "answer": "Watt"
+      },
+      {
+        "id": "9",
+        "question": "Acceleration due to gravity is:",
+        "options": [
+          "9.8 m/s",
+          "9.8 m/s²",
+          "10 m/s",
+          "10 m/s²"
+        ],
+        "answer": "9.8 m/s²"
+      },
+      {
+        "id": "10",
+        "question": "Speed is:",
+        "options": [
+          "Vector",
+          "Scalar",
+          "Force",
+          "Energy"
+        ],
+        "answer": "Scalar"
+      },
+      {
+        "id": "11",
+        "question": "Work is zero when angle is:",
+        "options": [
+          "0°",
+          "45°",
+          "90°",
+          "180°"
+        ],
+        "answer": "90°"
+      },
+      {
+        "id": "12",
+        "question": "Momentum formula is:",
+        "options": [
+          "mv",
+          "m/v",
+          "v/m",
+          "ma"
+        ],
+        "answer": "mv"
+      },
+      {
+        "id": "13",
+        "question": "Unit of pressure is:",
+        "options": [
+          "Newton",
+          "Pascal",
+          "Watt",
+          "Joule"
+        ],
+        "answer": "Pascal"
+      },
+      {
+        "id": "14",
+        "question": "Density formula is:",
+        "options": [
+          "m/v",
+          "v/m",
+          "mv",
+          "m+v"
+        ],
+        "answer": "m/v"
+      },
+      {
+        "id": "15",
+        "question": "Sound cannot travel in:",
+        "options": [
+          "Solid",
+          "Liquid",
+          "Gas",
+          "Vacuum"
+        ],
+        "answer": "Vacuum"
+      },
+      {
+        "id": "16",
+        "question": "Reflection of light follows:",
+        "options": [
+          "Snell’s law",
+          "Newton’s law",
+          "Laws of reflection",
+          "Ohm’s law"
+        ],
+        "answer": "Laws of reflection"
+      },
+      {
+        "id": "17",
+        "question": "Unit of current is:",
+        "options": [
+          "Volt",
+          "Ampere",
+          "Ohm",
+          "Watt"
+        ],
+        "answer": "Ampere"
+      },
+      {
+        "id": "18",
+        "question": "Ohm’s law is:",
+        "options": [
+          "V=IR",
+          "I=VR",
+          "R=VI",
+          "V=I/R"
+        ],
+        "answer": "V=IR"
+      },
+      {
+        "id": "19",
+        "question": "Transformer works on:",
+        "options": [
+          "DC",
+          "AC",
+          "Both",
+          "None"
+        ],
+        "answer": "AC"
+      },
+      {
+        "id": "20",
+        "question": "Energy conversion in bulb is:",
+        "options": [
+          "Electrical to light",
+          "Light to electrical",
+          "Chemical to heat",
+          "Mechanical to sound"
+        ],
+        "answer": "Electrical to light"
+      }
+    ],
+    "chemistry": [
+      {
+        "id": "21",
+        "question": "Which factor most strongly affects ionization energy across a period?",
+        "options": [
+          "Atomic mass",
+          "Nuclear charge",
+          "Number of shells",
+          "Temperature"
+        ],
+        "answer": "Nuclear charge"
+      },
+      {
+        "id": "22",
+        "question": "Why do noble gases have very high stability?",
+        "options": [
+          "Low atomic mass",
+          "Complete valence shell",
+          "High reactivity",
+          "High electronegativity"
+        ],
+        "answer": "Complete valence shell"
+      },
+      {
+        "id": "23",
+        "question": "Which of the following has highest electronegativity?",
+        "options": [
+          "Oxygen",
+          "Nitrogen",
+          "Fluorine",
+          "Chlorine"
+        ],
+        "answer": "Fluorine"
+      },
+      {
+        "id": "24",
+        "question": "A covalent bond is formed by:",
+        "options": [
+          "Transfer of electrons",
+          "Sharing of electrons",
+          "Loss of protons",
+          "Gain of neutrons"
+        ],
+        "answer": "Sharing of electrons"
+      },
+      {
+        "id": "25",
+        "question": "Which type of bond is present in NaCl?",
+        "options": [
+          "Covalent",
+          "Ionic",
+          "Metallic",
+          "Hydrogen"
+        ],
+        "answer": "Ionic"
+      },
+      {
+        "id": "26",
+        "question": "Increasing temperature generally increases reaction rate because:",
+        "options": [
+          "Molecules become larger",
+          "Activation energy decreases",
+          "Collision frequency increases",
+          "Mass increases"
+        ],
+        "answer": "Collision frequency increases"
+      },
+      {
+        "id": "27",
+        "question": "A catalyst works by:",
+        "options": [
+          "Increasing activation energy",
+          "Decreasing activation energy",
+          "Changing products",
+          "Increasing mass"
+        ],
+        "answer": "Decreasing activation energy"
+      },
+      {
+        "id": "28",
+        "question": "Which statement is true for equilibrium?",
+        "options": [
+          "Reaction stops completely",
+          "Forward rate = backward rate",
+          "Only forward reaction occurs",
+          "Products disappear"
+        ],
+        "answer": "Forward rate = backward rate"
+      },
+      {
+        "id": "29",
+        "question": "pH of a strong acid solution is usually:",
+        "options": [
+          "Above 7",
+          "Exactly 7",
+          "Below 7",
+          "14"
+        ],
+        "answer": "Below 7"
+      },
+      {
+        "id": "30",
+        "question": "Which species acts as reducing agent?",
+        "options": [
+          "Loses electrons",
+          "Gains electrons",
+          "Gains protons",
+          "Loses neutrons"
+        ],
+        "answer": "Loses electrons"
+      },
+      {
+        "id": "31",
+        "question": "Oxidation is defined as:",
+        "options": [
+          "Gain of electrons",
+          "Loss of electrons",
+          "Gain of neutrons",
+          "Gain of protons"
+        ],
+        "answer": "Loss of electrons"
+      },
+      {
+        "id": "32",
+        "question": "Which gas shows deviation from ideal behavior due to intermolecular forces?",
+        "options": [
+          "He",
+          "H2",
+          "NH3",
+          "Ne"
+        ],
+        "answer": "NH3"
+      },
+      {
+        "id": "33",
+        "question": "Which bond has highest strength?",
+        "options": [
+          "Single bond",
+          "Double bond",
+          "Triple bond",
+          "Ionic bond"
+        ],
+        "answer": "Triple bond"
+      },
+      {
+        "id": "34",
+        "question": "Electrolysis involves:",
+        "options": [
+          "Chemical reaction by heat",
+          "Chemical reaction by electricity",
+          "Physical change",
+          "No reaction"
+        ],
+        "answer": "Chemical reaction by electricity"
+      },
+      {
+        "id": "35",
+        "question": "Which ion is present in all acids?",
+        "options": [
+          "OH⁻",
+          "H⁺",
+          "Na⁺",
+          "Cl⁻"
+        ],
+        "answer": "H⁺"
+      },
+      {
+        "id": "36",
+        "question": "Which solution has pH closest to 7?",
+        "options": [
+          "Strong acid",
+          "Strong base",
+          "Neutral solution",
+          "Salt solution of acid"
+        ],
+        "answer": "Neutral solution"
+      },
+      {
+        "id": "37",
+        "question": "Which process is endothermic?",
+        "options": [
+          "Combustion",
+          "Neutralization",
+          "Melting of ice",
+          "Rusting"
+        ],
+        "answer": "Melting of ice"
+      },
+      {
+        "id": "38",
+        "question": "Which statement about electron is correct?",
+        "options": [
+          "Located in nucleus",
+          "Positive charge",
+          "Negatively charged particle",
+          "Heavy particle"
+        ],
+        "answer": "Negatively charged particle"
+      },
+      {
+        "id": "39",
+        "question": "Atomic number represents:",
+        "options": [
+          "Neutrons",
+          "Protons",
+          "Mass number",
+          "Electrons + neutrons"
+        ],
+        "answer": "Protons"
+      },
+      {
+        "id": "40",
+        "question": "Periodic table is arranged according to:",
+        "options": [
+          "Atomic mass",
+          "Atomic number",
+          "Density",
+          "Electronegativity"
+        ],
+        "answer": "Atomic number"
+      }
+    ],
+    "english": [
+      {
+        "id": "41",
+        "question": "Choose the sentence that expresses passive voice correctly:",
+        "options": [
+          "The teacher teaches the class",
+          "The class is taught by the teacher",
+          "The class taught the teacher",
+          "The teacher is teaching class"
+        ],
+        "answer": "The class is taught by the teacher"
+      },
+      {
+        "id": "42",
+        "question": "Identify the correctly reported speech: He said, 'I will go tomorrow.'",
+        "options": [
+          "He said that he will go tomorrow",
+          "He said that he would go the next day",
+          "He says he would go tomorrow",
+          "He said he goes tomorrow"
+        ],
+        "answer": "He said that he would go the next day"
+      },
+      {
+        "id": "43",
+        "question": "Choose the sentence with correct subject-verb agreement:",
+        "options": [
+          "The list of items are on the table",
+          "The list of items is on the table",
+          "The lists of items is on the table",
+          "The list of item are on table"
+        ],
+        "answer": "The list of items is on the table"
+      },
+      {
+        "id": "44",
+        "question": "Select the correct meaning of idiom 'to burn the midnight oil':",
+        "options": [
+          "To waste time",
+          "To study or work late at night",
+          "To sleep early",
+          "To travel at night"
+        ],
+        "answer": "To study or work late at night"
+      },
+      {
+        "id": "45",
+        "question": "Choose the correct conditional sentence:",
+        "options": [
+          "If I will go, I meet him",
+          "If I go, I will meet him",
+          "If I went, I will meet him",
+          "If I go, I meet him"
+        ],
+        "answer": "If I go, I will meet him"
+      },
+      {
+        "id": "46",
+        "question": "Identify the adjective in the sentence: 'She wore a beautiful dress.'",
+        "options": [
+          "She",
+          "wore",
+          "beautiful",
+          "dress"
+        ],
+        "answer": "beautiful"
+      },
+      {
+        "id": "47",
+        "question": "Which sentence is grammatically correct?",
+        "options": [
+          "He don't know the answer",
+          "He doesn't knows the answer",
+          "He doesn't know the answer",
+          "He not know the answer"
+        ],
+        "answer": "He doesn't know the answer"
+      },
+      {
+        "id": "48",
+        "question": "Choose correct synonym of 'vivid':",
+        "options": [
+          "Dull",
+          "Bright",
+          "Weak",
+          "Dark"
+        ],
+        "answer": "Bright"
+      },
+      {
+        "id": "49",
+        "question": "Choose correct antonym of 'scarce':",
+        "options": [
+          "Rare",
+          "Limited",
+          "Plentiful",
+          "Small"
+        ],
+        "answer": "Plentiful"
+      },
+      {
+        "id": "50",
+        "question": "Identify the noun clause in sentence: 'I know that he is honest.'",
+        "options": [
+          "I know",
+          "that he is honest",
+          "he is honest",
+          "know that"
+        ],
+        "answer": "that he is honest"
+      },
+      {
+        "id": "51",
+        "question": "Choose correct preposition: She is interested ___ science.",
+        "options": [
+          "in",
+          "on",
+          "at",
+          "for"
+        ],
+        "answer": "in"
+      },
+      {
+        "id": "52",
+        "question": "Which sentence is in present perfect tense?",
+        "options": [
+          "He ate food",
+          "He has eaten food",
+          "He will eat food",
+          "He is eating food"
+        ],
+        "answer": "He has eaten food"
+      },
+      {
+        "id": "53",
+        "question": "Choose correct indirect speech: She said, 'I am happy.'",
+        "options": [
+          "She said that she is happy",
+          "She said that she was happy",
+          "She says she was happy",
+          "She said she happy"
+        ],
+        "answer": "She said that she was happy"
+      },
+      {
+        "id": "54",
+        "question": "Identify correct use of article:",
+        "options": [
+          "A hour",
+          "An hour",
+          "The hour",
+          "No hour"
+        ],
+        "answer": "An hour"
+      },
+      {
+        "id": "55",
+        "question": "Choose correct passive form: 'They are building a house.'",
+        "options": [
+          "A house is built by them",
+          "A house is being built by them",
+          "A house was built by them",
+          "A house builds by them"
+        ],
+        "answer": "A house is being built by them"
+      },
+      {
+        "id": "56",
+        "question": "Select correct verb form: She ___ to school every day.",
+        "options": [
+          "go",
+          "goes",
+          "going",
+          "gone"
+        ],
+        "answer": "goes"
+      },
+      {
+        "id": "57",
+        "question": "Identify correct relative pronoun usage:",
+        "options": [
+          "The boy which is running",
+          "The boy who is running",
+          "The boy whom is running",
+          "The boy whose running"
+        ],
+        "answer": "The boy who is running"
+      },
+      {
+        "id": "58",
+        "question": "Choose correct meaning of proverb 'A stitch in time saves nine':",
+        "options": [
+          "Delay causes more problems",
+          "Work slowly",
+          "Time is money",
+          "Stitching is important"
+        ],
+        "answer": "Delay causes more problems"
+      },
+      {
+        "id": "59",
+        "question": "Identify error in sentence: 'He go to school daily.'",
+        "options": [
+          "He",
+          "go",
+          "to school",
+          "daily"
+        ],
+        "answer": "go"
+      },
+      {
+        "id": "60",
+        "question": "Choose correct tense: 'They had finished the work.'",
+        "options": [
+          "Past simple",
+          "Past perfect",
+          "Present perfect",
+          "Future perfect"
+        ],
+        "answer": "Past perfect"
+      }
+    ],
+    "biology": [
+      {
+        "id": "61",
+        "question": "If mitochondria of a cell are destroyed, the most immediate effect will be:",
+        "options": [
+          "Protein synthesis stops",
+          "ATP production stops",
+          "DNA replication stops",
+          "Cell wall formation stops"
+        ],
+        "answer": "ATP production stops"
+      },
+      {
+        "id": "62",
+        "question": "Which statement best explains enzyme specificity?",
+        "options": [
+          "Enzymes work on all substrates",
+          "Enzymes have random structure",
+          "Active site matches specific substrate",
+          "Enzymes change after reaction"
+        ],
+        "answer": "Active site matches specific substrate"
+      },
+      {
+        "id": "63",
+        "question": "During respiration, glucose is finally converted into:",
+        "options": [
+          "Oxygen and water",
+          "Carbon dioxide and water",
+          "Lactic acid only",
+          "Starch and ATP"
+        ],
+        "answer": "Carbon dioxide and water"
+      },
+      {
+        "id": "64",
+        "question": "Which part of neuron carries impulse away from cell body?",
+        "options": [
+          "Dendrite",
+          "Axon",
+          "Nucleus",
+          "Synapse"
+        ],
+        "answer": "Axon"
+      },
+      {
+        "id": "65",
+        "question": "If stomata remain open continuously, plant will:",
+        "options": [
+          "Gain excess water",
+          "Lose excessive water",
+          "Stop photosynthesis",
+          "Increase root growth"
+        ],
+        "answer": "Lose excessive water"
+      },
+      {
+        "id": "66",
+        "question": "Which blood component is responsible for clotting?",
+        "options": [
+          "RBC",
+          "WBC",
+          "Platelets",
+          "Plasma"
+        ],
+        "answer": "Platelets"
+      },
+      {
+        "id": "67",
+        "question": "DNA differs from RNA because DNA contains:",
+        "options": [
+          "Uracil",
+          "Ribose sugar",
+          "Thymine",
+          "Single strand only"
+        ],
+        "answer": "Thymine"
+      },
+      {
+        "id": "68",
+        "question": "Photosynthesis is directly affected if:",
+        "options": [
+          "Oxygen increases",
+          "Carbon dioxide decreases",
+          "Soil becomes dry",
+          "Temperature drops slightly"
+        ],
+        "answer": "Carbon dioxide decreases"
+      },
+      {
+        "id": "69",
+        "question": "Which organ filters blood in humans?",
+        "options": [
+          "Liver",
+          "Kidney",
+          "Heart",
+          "Lungs"
+        ],
+        "answer": "Kidney"
+      },
+      {
+        "id": "70",
+        "question": "Hormone insulin regulates:",
+        "options": [
+          "Blood pressure",
+          "Blood sugar level",
+          "Heart rate",
+          "Digestion"
+        ],
+        "answer": "Blood sugar level"
+      },
+      {
+        "id": "71",
+        "question": "Which structure controls cell activities?",
+        "options": [
+          "Cytoplasm",
+          "Nucleus",
+          "Cell wall",
+          "Membrane"
+        ],
+        "answer": "Nucleus"
+      },
+      {
+        "id": "72",
+        "question": "If a plant lacks chlorophyll, it will:",
+        "options": [
+          "Grow faster",
+          "Not perform photosynthesis",
+          "Produce more oxygen",
+          "Absorb more water"
+        ],
+        "answer": "Not perform photosynthesis"
+      },
+      {
+        "id": "73",
+        "question": "Which process removes nitrogenous waste from body?",
+        "options": [
+          "Respiration",
+          "Excretion",
+          "Digestion",
+          "Circulation"
+        ],
+        "answer": "Excretion"
+      },
+      {
+        "id": "74",
+        "question": "Which organelle is known as 'protein factory'?",
+        "options": [
+          "Mitochondria",
+          "Ribosome",
+          "Golgi body",
+          "Lysosome"
+        ],
+        "answer": "Ribosome"
+      },
+      {
+        "id": "75",
+        "question": "Which feature is common in all living cells?",
+        "options": [
+          "Cell wall",
+          "Chloroplast",
+          "Cell membrane",
+          "Large vacuole"
+        ],
+        "answer": "Cell membrane"
+      },
+      {
+        "id": "76",
+        "question": "During mitosis, chromosomes align at:",
+        "options": [
+          "Prophase",
+          "Metaphase",
+          "Anaphase",
+          "Telophase"
+        ],
+        "answer": "Metaphase"
+      },
+      {
+        "id": "77",
+        "question": "Which gas is released during respiration?",
+        "options": [
+          "Oxygen",
+          "Carbon dioxide",
+          "Nitrogen",
+          "Hydrogen"
+        ],
+        "answer": "Carbon dioxide"
+      },
+      {
+        "id": "78",
+        "question": "Which vitamin is produced in skin by sunlight?",
+        "options": [
+          "Vitamin A",
+          "Vitamin B",
+          "Vitamin C",
+          "Vitamin D"
+        ],
+        "answer": "Vitamin D"
+      },
+      {
+        "id": "79",
+        "question": "If a person has low RBC count, he/she will suffer from:",
+        "options": [
+          "Diabetes",
+          "Anemia",
+          "Asthma",
+          "Fever"
+        ],
+        "answer": "Anemia"
+      },
+      {
+        "id": "80",
+        "question": "Which system transports oxygen in human body?",
+        "options": [
+          "Digestive system",
+          "Nervous system",
+          "Circulatory system",
+          "Excretory system"
+        ],
+        "answer": "Circulatory system"
+      }
+    ],
+    "computer": [
+      {
+        "id": "81",
+        "question": "Which memory is fastest among the following?",
+        "options": [
+          "RAM",
+          "Hard Disk",
+          "Cache Memory",
+          "ROM"
+        ],
+        "answer": "Cache Memory"
+      },
+      {
+        "id": "82",
+        "question": "Which of the following is NOT system software?",
+        "options": [
+          "Operating System",
+          "Compiler",
+          "MS Word",
+          "Device Driver"
+        ],
+        "answer": "MS Word"
+      },
+      {
+        "id": "83",
+        "question": "Binary number system is based on:",
+        "options": [
+          "Base 2",
+          "Base 8",
+          "Base 10",
+          "Base 16"
+        ],
+        "answer": "Base 2"
+      },
+      {
+        "id": "84",
+        "question": "Which device converts digital signal to analog?",
+        "options": [
+          "Router",
+          "Modem",
+          "CPU",
+          "Scanner"
+        ],
+        "answer": "Modem"
+      },
+      {
+        "id": "85",
+        "question": "HTTP protocol is used for:",
+        "options": [
+          "File transfer",
+          "Web browsing",
+          "Email",
+          "Database"
+        ],
+        "answer": "Web browsing"
+      },
+      {
+        "id": "86",
+        "question": "Compiler is used to:",
+        "options": [
+          "Execute program directly",
+          "Translate source code",
+          "Store data",
+          "Delete files"
+        ],
+        "answer": "Translate source code"
+      },
+      {
+        "id": "87",
+        "question": "Which is volatile memory?",
+        "options": [
+          "ROM",
+          "Hard Disk",
+          "RAM",
+          "CD-ROM"
+        ],
+        "answer": "RAM"
+      },
+      {
+        "id": "88",
+        "question": "Operating system mainly acts as:",
+        "options": [
+          "User",
+          "Interface between user and hardware",
+          "Application software",
+          "Hardware device"
+        ],
+        "answer": "Interface between user and hardware"
+      },
+      {
+        "id": "89",
+        "question": "Which language is closest to machine language?",
+        "options": [
+          "High-level language",
+          "Assembly language",
+          "Java",
+          "Python"
+        ],
+        "answer": "Assembly language"
+      },
+      {
+        "id": "90",
+        "question": "URL stands for:",
+        "options": [
+          "Uniform Resource Locator",
+          "Universal Routing Link",
+          "Unique Resource Language",
+          "Unified Resource Locator"
+        ],
+        "answer": "Uniform Resource Locator"
+      },
+      {
+        "id": "91",
+        "question": "Which of the following is an input device?",
+        "options": [
+          "Monitor",
+          "Printer",
+          "Keyboard",
+          "Speaker"
+        ],
+        "answer": "Keyboard"
+      },
+      {
+        "id": "92",
+        "question": "Data stored permanently is called:",
+        "options": [
+          "Primary memory",
+          "Secondary memory",
+          "Cache memory",
+          "Register"
+        ],
+        "answer": "Secondary memory"
+      },
+      {
+        "id": "93",
+        "question": "Which one is NOT an operating system?",
+        "options": [
+          "Windows",
+          "Linux",
+          "Oracle",
+          "Android"
+        ],
+        "answer": "Oracle"
+      },
+      {
+        "id": "94",
+        "question": "Cloud computing means:",
+        "options": [
+          "Local storage",
+          "Internet-based data storage",
+          "Hardware processing",
+          "Offline database"
+        ],
+        "answer": "Internet-based data storage"
+      },
+      {
+        "id": "95",
+        "question": "Virus in computer is:",
+        "options": [
+          "Hardware component",
+          "Malicious software",
+          "Operating system",
+          "Input device"
+        ],
+        "answer": "Malicious software"
+      },
+      {
+        "id": "96",
+        "question": "Which port is used for secure web browsing?",
+        "options": [
+          "80",
+          "21",
+          "443",
+          "25"
+        ],
+        "answer": "443"
+      },
+      {
+        "id": "97",
+        "question": "Which device connects networks together?",
+        "options": [
+          "Switch",
+          "Router",
+          "Monitor",
+          "Keyboard"
+        ],
+        "answer": "Router"
+      },
+      {
+        "id": "98",
+        "question": "IP address is used for:",
+        "options": [
+          "Identifying computer on network",
+          "Storing files",
+          "Running programs",
+          "Printing data"
+        ],
+        "answer": "Identifying computer on network"
+      },
+      {
+        "id": "99",
+        "question": "Which generation uses Artificial Intelligence?",
+        "options": [
+          "1st",
+          "2nd",
+          "4th",
+          "5th"
+        ],
+        "answer": "5th"
+      },
+      {
+        "id": "100",
+        "question": "Which is NOT a characteristic of computer?",
+        "options": [
+          "Speed",
+          "Accuracy",
+          "Feelings",
+          "Storage"
+        ],
+        "answer": "Feelings"
+      }
+    ],
+    "maths": [
+      {
+        "id": "101",
+        "question": "If f(x) = 2x + 3 and g(x) = x², then f(g(2)) is:",
+        "options": [
+          "7",
+          "11",
+          "13",
+          "17"
+        ],
+        "answer": "11"
+      },
+      {
+        "id": "102",
+        "question": "If determinant of a matrix is zero, the matrix is:",
+        "options": [
+          "Identity",
+          "Singular",
+          "Diagonal",
+          "Unit"
+        ],
+        "answer": "Singular"
+      },
+      {
+        "id": "103",
+        "question": "The value of sin 30° is:",
+        "options": [
+          "1",
+          "1/2",
+          "√3/2",
+          "0"
+        ],
+        "answer": "1/2"
+      },
+      {
+        "id": "104",
+        "question": "If A ⊂ B, then:",
+        "options": [
+          "A = B",
+          "A is larger than B",
+          "All elements of A are in B",
+          "No relation"
+        ],
+        "answer": "All elements of A are in B"
+      },
+      {
+        "id": "105",
+        "question": "Derivative of x³ is:",
+        "options": [
+          "x²",
+          "3x²",
+          "3x",
+          "x³"
+        ],
+        "answer": "3x²"
+      },
+      {
+        "id": "106",
+        "question": "If probability of impossible event is:",
+        "options": [
+          "1",
+          "0",
+          "0.5",
+          "Undefined"
+        ],
+        "answer": "0"
+      },
+      {
+        "id": "107",
+        "question": "The equation of straight line is:",
+        "options": [
+          "y = mx + c",
+          "x² + y² = r²",
+          "a² + b² = c²",
+          "xy = c"
+        ],
+        "answer": "y = mx + c"
+      },
+      {
+        "id": "108",
+        "question": "If matrix A has inverse, then determinant of A is:",
+        "options": [
+          "0",
+          "1",
+          "Not zero",
+          "Negative only"
+        ],
+        "answer": "Not zero"
+      },
+      {
+        "id": "109",
+        "question": "The range of a function is:",
+        "options": [
+          "All input values",
+          "All output values",
+          "Only constants",
+          "Only negative values"
+        ],
+        "answer": "All output values"
+      },
+      {
+        "id": "110",
+        "question": "If tan θ = 1, then θ is:",
+        "options": [
+          "30°",
+          "45°",
+          "60°",
+          "90°"
+        ],
+        "answer": "45°"
+      },
+      {
+        "id": "111",
+        "question": "If log a = 0, then a =",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "10"
+        ],
+        "answer": "1"
+      },
+      {
+        "id": "112",
+        "question": "A quadratic equation has:",
+        "options": [
+          "1 root",
+          "2 roots",
+          "3 roots",
+          "No root"
+        ],
+        "answer": "2 roots"
+      },
+      {
+        "id": "113",
+        "question": "If two lines are perpendicular, their slopes satisfy:",
+        "options": [
+          "m1 = m2",
+          "m1 × m2 = -1",
+          "m1 + m2 = 0",
+          "m1 / m2 = 1"
+        ],
+        "answer": "m1 × m2 = -1"
+      },
+      {
+        "id": "114",
+        "question": "Mean is also called:",
+        "options": [
+          "Mode",
+          "Median",
+          "Average",
+          "Range"
+        ],
+        "answer": "Average"
+      },
+      {
+        "id": "115",
+        "question": "Standard deviation measures:",
+        "options": [
+          "Central value",
+          "Spread of data",
+          "Total sum",
+          "Frequency"
+        ],
+        "answer": "Spread of data"
+      },
+      {
+        "id": "116",
+        "question": "If a function is increasing, its slope is:",
+        "options": [
+          "Negative",
+          "Zero",
+          "Positive",
+          "Undefined"
+        ],
+        "answer": "Positive"
+      },
+      {
+        "id": "117",
+        "question": "The value of i³ is:",
+        "options": [
+          "i",
+          "-i",
+          "1",
+          "-1"
+        ],
+        "answer": "-i"
+      },
+      {
+        "id": "118",
+        "question": "If A = B and B = C, then:",
+        "options": [
+          "A ≠ C",
+          "A > C",
+          "A = C",
+          "No relation"
+        ],
+        "answer": "A = C"
+      },
+      {
+        "id": "119",
+        "question": "Distance formula is based on:",
+        "options": [
+          "Pythagoras theorem",
+          "Algebraic identity",
+          "Logarithm",
+          "Derivative"
+        ],
+        "answer": "Pythagoras theorem"
+      },
+      {
+        "id": "120",
+        "question": "Limit of a constant function is:",
+        "options": [
+          "0",
+          "Infinity",
+          "Constant itself",
+          "Undefined"
+        ],
+        "answer": "Constant itself"
+      }
+    ]
+  },
+  "intermediate": {
+    "physics": [
+      {
+        "id": "1",
+        "question": "A body moving in a circle with constant speed has:",
+        "options": [
+          "Constant velocity",
+          "Zero acceleration",
+          "Changing velocity",
+          "Zero force"
+        ],
+        "answer": "Changing velocity"
+      },
+      {
+        "id": "2",
+        "question": "Dimension of force is:",
+        "options": [
+          "MLT⁻¹",
+          "MLT⁻²",
+          "ML²T⁻²",
+          "M⁻¹LT²"
+        ],
+        "answer": "MLT⁻²"
+      },
+      {
+        "id": "3",
+        "question": "If net force is zero, body must be:",
+        "options": [
+          "At rest only",
+          "In motion only",
+          "At rest or uniform motion",
+          "Accelerating"
+        ],
+        "answer": "At rest or uniform motion"
+      },
+      {
+        "id": "4",
+        "question": "Work done is maximum when angle between force and displacement is:",
+        "options": [
+          "0°",
+          "90°",
+          "180°",
+          "45°"
+        ],
+        "answer": "0°"
+      },
+      {
+        "id": "5",
+        "question": "Escape velocity depends on:",
+        "options": [
+          "Mass of object",
+          "Radius of planet",
+          "Mass and radius of planet",
+          "Time"
+        ],
+        "answer": "Mass and radius of planet"
+      },
+      {
+        "id": "6",
+        "question": "Unit of gravitational constant is:",
+        "options": [
+          "Nm²/kg²",
+          "N/kg",
+          "kg/m²",
+          "J/kg"
+        ],
+        "answer": "Nm²/kg²"
+      },
+      {
+        "id": "7",
+        "question": "In SHM, restoring force is proportional to:",
+        "options": [
+          "Velocity",
+          "Acceleration",
+          "Displacement",
+          "Time"
+        ],
+        "answer": "Displacement"
+      },
+      {
+        "id": "8",
+        "question": "Time period of pendulum depends on:",
+        "options": [
+          "Mass",
+          "Length",
+          "Amplitude",
+          "Velocity"
+        ],
+        "answer": "Length"
+      },
+      {
+        "id": "9",
+        "question": "Resonance occurs when frequency is:",
+        "options": [
+          "Zero",
+          "Equal to natural frequency",
+          "Maximum",
+          "Minimum"
+        ],
+        "answer": "Equal to natural frequency"
+      },
+      {
+        "id": "10",
+        "question": "Wave speed formula is:",
+        "options": [
+          "v = fλ",
+          "v = f/λ",
+          "v = λ/f",
+          "v = ft"
+        ],
+        "answer": "v = fλ"
+      },
+      {
+        "id": "11",
+        "question": "Heat transfer without medium is:",
+        "options": [
+          "Conduction",
+          "Convection",
+          "Radiation",
+          "Reflection"
+        ],
+        "answer": "Radiation"
+      },
+      {
+        "id": "12",
+        "question": "Absolute zero temperature is:",
+        "options": [
+          "0°C",
+          "-273°C",
+          "100K",
+          "273K"
+        ],
+        "answer": "-273°C"
+      },
+      {
+        "id": "13",
+        "question": "Ohm’s law: V = ?",
+        "options": [
+          "IR",
+          "I/R",
+          "R/I",
+          "VI"
+        ],
+        "answer": "IR"
+      },
+      {
+        "id": "14",
+        "question": "Resistance increases with:",
+        "options": [
+          "Decrease in length",
+          "Increase in area",
+          "Increase in length",
+          "Decrease in resistivity"
+        ],
+        "answer": "Increase in length"
+      },
+      {
+        "id": "15",
+        "question": "Magnetic field unit is:",
+        "options": [
+          "Tesla",
+          "Weber",
+          "Volt",
+          "Ampere"
+        ],
+        "answer": "Tesla"
+      },
+      {
+        "id": "16",
+        "question": "Transformer works on:",
+        "options": [
+          "DC",
+          "AC",
+          "Both",
+          "None"
+        ],
+        "answer": "AC"
+      },
+      {
+        "id": "17",
+        "question": "Light behaves as:",
+        "options": [
+          "Wave",
+          "Particle",
+          "Both",
+          "None"
+        ],
+        "answer": "Both"
+      },
+      {
+        "id": "18",
+        "question": "Energy of photon is:",
+        "options": [
+          "hf",
+          "h/f",
+          "f/h",
+          "h+f"
+        ],
+        "answer": "hf"
+      },
+      {
+        "id": "19",
+        "question": "Half-life depends on:",
+        "options": [
+          "Temperature",
+          "Pressure",
+          "Nature of substance",
+          "Mass"
+        ],
+        "answer": "Nature of substance"
+      },
+      {
+        "id": "20",
+        "question": "Nuclear fission produces:",
+        "options": [
+          "Light energy only",
+          "Heat energy only",
+          "Large energy",
+          "No energy"
+        ],
+        "answer": "Large energy"
+      }
+    ],
+    "chemistry": [
+      {
+        "id": "21",
+        "question": "Which quantum number determines the size of an orbital?",
+        "options": [
+          "n",
+          "l",
+          "m",
+          "s"
+        ],
+        "answer": "n"
+      },
+      {
+        "id": "22",
+        "question": "Maximum number of electrons in p-subshell is:",
+        "options": [
+          "2",
+          "6",
+          "10",
+          "14"
+        ],
+        "answer": "6"
+      },
+      {
+        "id": "23",
+        "question": "Ionization energy generally increases across a period due to:",
+        "options": [
+          "Decrease in nuclear charge",
+          "Increase in atomic radius",
+          "Increase in nuclear charge",
+          "Decrease in electrons"
+        ],
+        "answer": "Increase in nuclear charge"
+      },
+      {
+        "id": "24",
+        "question": "Which element has highest electronegativity?",
+        "options": [
+          "Oxygen",
+          "Fluorine",
+          "Nitrogen",
+          "Chlorine"
+        ],
+        "answer": "Fluorine"
+      },
+      {
+        "id": "25",
+        "question": "Hybridization of carbon in ethene (C2H4) is:",
+        "options": [
+          "sp",
+          "sp2",
+          "sp3",
+          "sp3d"
+        ],
+        "answer": "sp2"
+      },
+      {
+        "id": "26",
+        "question": "Which bond is strongest?",
+        "options": [
+          "Single bond",
+          "Double bond",
+          "Triple bond",
+          "Ionic bond"
+        ],
+        "answer": "Triple bond"
+      },
+      {
+        "id": "27",
+        "question": "Which intermolecular force is strongest?",
+        "options": [
+          "Dipole-dipole",
+          "Hydrogen bonding",
+          "London forces",
+          "Van der Waals"
+        ],
+        "answer": "Hydrogen bonding"
+      },
+      {
+        "id": "28",
+        "question": "pH of neutral solution at 25°C is:",
+        "options": [
+          "0",
+          "7",
+          "14",
+          "1"
+        ],
+        "answer": "7"
+      },
+      {
+        "id": "29",
+        "question": "Increase in temperature affects reaction rate by:",
+        "options": [
+          "Decreasing collisions",
+          "Increasing activation energy",
+          "Increasing kinetic energy",
+          "No effect"
+        ],
+        "answer": "Increasing kinetic energy"
+      },
+      {
+        "id": "30",
+        "question": "Catalyst works by:",
+        "options": [
+          "Increasing energy",
+          "Decreasing activation energy",
+          "Increasing temperature",
+          "Reducing concentration"
+        ],
+        "answer": "Decreasing activation energy"
+      },
+      {
+        "id": "31",
+        "question": "Which process is endothermic?",
+        "options": [
+          "Combustion",
+          "Freezing",
+          "Melting",
+          "Condensation"
+        ],
+        "answer": "Melting"
+      },
+      {
+        "id": "32",
+        "question": "Le Chatelier’s principle explains:",
+        "options": [
+          "Reaction rate",
+          "Equilibrium shift",
+          "Bond strength",
+          "Atomic structure"
+        ],
+        "answer": "Equilibrium shift"
+      },
+      {
+        "id": "33",
+        "question": "Oxidation involves:",
+        "options": [
+          "Gain of electrons",
+          "Loss of electrons",
+          "Gain of protons",
+          "Loss of neutrons"
+        ],
+        "answer": "Loss of electrons"
+      },
+      {
+        "id": "34",
+        "question": "Reducing agent:",
+        "options": [
+          "Gains electrons",
+          "Loses electrons",
+          "Neutral",
+          "None"
+        ],
+        "answer": "Loses electrons"
+      },
+      {
+        "id": "35",
+        "question": "Which gas deviates most from ideal behavior?",
+        "options": [
+          "H2",
+          "He",
+          "NH3",
+          "O2"
+        ],
+        "answer": "NH3"
+      },
+      {
+        "id": "36",
+        "question": "Molarity is defined as:",
+        "options": [
+          "moles per kg",
+          "moles per liter",
+          "grams per liter",
+          "moles per mole"
+        ],
+        "answer": "moles per liter"
+      },
+      {
+        "id": "37",
+        "question": "Which functional group is present in alcohol?",
+        "options": [
+          "-COOH",
+          "-OH",
+          "-NH2",
+          "-CHO"
+        ],
+        "answer": "-OH"
+      },
+      {
+        "id": "38",
+        "question": "Isomerism is:",
+        "options": [
+          "Same formula, different structure",
+          "Different formula, same structure",
+          "Same atoms",
+          "None"
+        ],
+        "answer": "Same formula, different structure"
+      },
+      {
+        "id": "39",
+        "question": "Which hydrocarbon is saturated?",
+        "options": [
+          "Ethene",
+          "Ethyne",
+          "Methane",
+          "Benzene"
+        ],
+        "answer": "Methane"
+      },
+      {
+        "id": "40",
+        "question": "Which polymer is natural?",
+        "options": [
+          "Plastic",
+          "Nylon",
+          "Rubber",
+          "PVC"
+        ],
+        "answer": "Rubber"
+      }
+    ],
+    "biology": [
+      {
+        "id": "41",
+        "question": "Which organelle is known as the powerhouse of the cell?",
+        "options": [
+          "Nucleus",
+          "Ribosome",
+          "Mitochondria",
+          "Golgi apparatus"
+        ],
+        "answer": "Mitochondria"
+      },
+      {
+        "id": "42",
+        "question": "DNA replication occurs during which phase of cell cycle?",
+        "options": [
+          "G1 phase",
+          "S phase",
+          "G2 phase",
+          "M phase"
+        ],
+        "answer": "S phase"
+      },
+      {
+        "id": "43",
+        "question": "Which molecule carries genetic information?",
+        "options": [
+          "RNA",
+          "Protein",
+          "DNA",
+          "Lipid"
+        ],
+        "answer": "DNA"
+      },
+      {
+        "id": "44",
+        "question": "Enzymes function by:",
+        "options": [
+          "Increasing activation energy",
+          "Decreasing activation energy",
+          "Stopping reactions",
+          "Producing heat"
+        ],
+        "answer": "Decreasing activation energy"
+      },
+      {
+        "id": "45",
+        "question": "Which process produces ATP in cells?",
+        "options": [
+          "Photosynthesis",
+          "Respiration",
+          "Diffusion",
+          "Osmosis"
+        ],
+        "answer": "Respiration"
+      },
+      {
+        "id": "46",
+        "question": "Which blood cells are responsible for immunity?",
+        "options": [
+          "RBC",
+          "WBC",
+          "Platelets",
+          "Plasma"
+        ],
+        "answer": "WBC"
+      },
+      {
+        "id": "47",
+        "question": "Which part of brain controls involuntary actions?",
+        "options": [
+          "Cerebrum",
+          "Cerebellum",
+          "Medulla",
+          "Hypothalamus"
+        ],
+        "answer": "Medulla"
+      },
+      {
+        "id": "48",
+        "question": "Photosynthesis mainly occurs in:",
+        "options": [
+          "Roots",
+          "Stem",
+          "Leaves",
+          "Flowers"
+        ],
+        "answer": "Leaves"
+      },
+      {
+        "id": "49",
+        "question": "Which hormone regulates blood sugar level?",
+        "options": [
+          "Adrenaline",
+          "Insulin",
+          "Thyroxine",
+          "Estrogen"
+        ],
+        "answer": "Insulin"
+      },
+      {
+        "id": "50",
+        "question": "Which system transports nutrients in plants?",
+        "options": [
+          "Xylem",
+          "Phloem",
+          "Cambium",
+          "Stomata"
+        ],
+        "answer": "Phloem"
+      },
+      {
+        "id": "51",
+        "question": "Which gas is released during photosynthesis?",
+        "options": [
+          "CO2",
+          "O2",
+          "N2",
+          "H2"
+        ],
+        "answer": "O2"
+      },
+      {
+        "id": "52",
+        "question": "Which vitamin is produced in skin by sunlight?",
+        "options": [
+          "Vitamin A",
+          "Vitamin B",
+          "Vitamin C",
+          "Vitamin D"
+        ],
+        "answer": "Vitamin D"
+      },
+      {
+        "id": "53",
+        "question": "Which structure controls entry and exit of substances in cell?",
+        "options": [
+          "Cell wall",
+          "Cell membrane",
+          "Nucleus",
+          "Cytoplasm"
+        ],
+        "answer": "Cell membrane"
+      },
+      {
+        "id": "54",
+        "question": "Which type of reproduction produces identical offspring?",
+        "options": [
+          "Sexual",
+          "Asexual",
+          "Binary fission",
+          "Fusion"
+        ],
+        "answer": "Asexual"
+      },
+      {
+        "id": "55",
+        "question": "Which scientist proposed theory of evolution by natural selection?",
+        "options": [
+          "Mendel",
+          "Darwin",
+          "Pasteur",
+          "Watson"
+        ],
+        "answer": "Darwin"
+      },
+      {
+        "id": "56",
+        "question": "Which part of plant absorbs water?",
+        "options": [
+          "Leaves",
+          "Stem",
+          "Roots",
+          "Flowers"
+        ],
+        "answer": "Roots"
+      },
+      {
+        "id": "57",
+        "question": "Which process removes waste from body?",
+        "options": [
+          "Digestion",
+          "Respiration",
+          "Excretion",
+          "Circulation"
+        ],
+        "answer": "Excretion"
+      },
+      {
+        "id": "58",
+        "question": "Which biomolecule is enzyme made of?",
+        "options": [
+          "Carbohydrate",
+          "Protein",
+          "Lipid",
+          "Vitamin"
+        ],
+        "answer": "Protein"
+      },
+      {
+        "id": "59",
+        "question": "Which structure in leaf controls transpiration?",
+        "options": [
+          "Xylem",
+          "Phloem",
+          "Stomata",
+          "Cuticle"
+        ],
+        "answer": "Stomata"
+      },
+      {
+        "id": "60",
+        "question": "Which organ filters blood in human body?",
+        "options": [
+          "Heart",
+          "Liver",
+          "Kidney",
+          "Lungs"
+        ],
+        "answer": "Kidney"
+      }
+    ],
+    "maths": [
+      {
+        "id": "61",
+        "question": "If f(x) = x², then f'(x) is:",
+        "options": [
+          "x",
+          "2x",
+          "x²",
+          "2"
+        ],
+        "answer": "2x"
+      },
+      {
+        "id": "62",
+        "question": "Limit of 1/x as x approaches infinity is:",
+        "options": [
+          "1",
+          "0",
+          "∞",
+          "Undefined"
+        ],
+        "answer": "0"
+      },
+      {
+        "id": "63",
+        "question": "Derivative of sin(x) is:",
+        "options": [
+          "cos(x)",
+          "-cos(x)",
+          "-sin(x)",
+          "tan(x)"
+        ],
+        "answer": "cos(x)"
+      },
+      {
+        "id": "64",
+        "question": "If determinant of a matrix is 0, system is:",
+        "options": [
+          "Consistent",
+          "Inconsistent",
+          "Dependent",
+          "Independent"
+        ],
+        "answer": "Dependent"
+      },
+      {
+        "id": "65",
+        "question": "Integration of 1/x is:",
+        "options": [
+          "x",
+          "ln|x|",
+          "1/x²",
+          "e^x"
+        ],
+        "answer": "ln|x|"
+      },
+      {
+        "id": "66",
+        "question": "If A ∩ B = Ø, sets are called:",
+        "options": [
+          "Equal",
+          "Disjoint",
+          "Subset",
+          "Universal"
+        ],
+        "answer": "Disjoint"
+      },
+      {
+        "id": "67",
+        "question": "Probability of sure event is:",
+        "options": [
+          "0",
+          "0.5",
+          "1",
+          "∞"
+        ],
+        "answer": "1"
+      },
+      {
+        "id": "68",
+        "question": "Standard deviation measures:",
+        "options": [
+          "Central tendency",
+          "Spread of data",
+          "Median",
+          "Mode"
+        ],
+        "answer": "Spread of data"
+      },
+      {
+        "id": "69",
+        "question": "Slope of horizontal line is:",
+        "options": [
+          "0",
+          "1",
+          "∞",
+          "Undefined"
+        ],
+        "answer": "0"
+      },
+      {
+        "id": "70",
+        "question": "Equation of a circle is:",
+        "options": [
+          "(x-y)²",
+          "x²+y²=r²",
+          "x+y=r",
+          "x²-y²=r²"
+        ],
+        "answer": "x²+y²=r²"
+      },
+      {
+        "id": "71",
+        "question": "If sin²θ + cos²θ = ?",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "∞"
+        ],
+        "answer": "1"
+      },
+      {
+        "id": "72",
+        "question": "Matrix multiplication is:",
+        "options": [
+          "Commutative",
+          "Not commutative",
+          "Always zero",
+          "Undefined"
+        ],
+        "answer": "Not commutative"
+      },
+      {
+        "id": "73",
+        "question": "Derivative of constant is:",
+        "options": [
+          "1",
+          "0",
+          "x",
+          "Undefined"
+        ],
+        "answer": "0"
+      },
+      {
+        "id": "74",
+        "question": "If f(x) = ax + b, then graph is:",
+        "options": [
+          "Curve",
+          "Parabola",
+          "Straight line",
+          "Circle"
+        ],
+        "answer": "Straight line"
+      },
+      {
+        "id": "75",
+        "question": "Permutation means:",
+        "options": [
+          "Selection",
+          "Arrangement",
+          "Grouping",
+          "Division"
+        ],
+        "answer": "Arrangement"
+      },
+      {
+        "id": "76",
+        "question": "Combination means:",
+        "options": [
+          "Arrangement",
+          "Selection",
+          "Order matters",
+          "Sequence"
+        ],
+        "answer": "Selection"
+      },
+      {
+        "id": "77",
+        "question": "If log(1) = ?",
+        "options": [
+          "1",
+          "0",
+          "∞",
+          "-1"
+        ],
+        "answer": "0"
+      },
+      {
+        "id": "78",
+        "question": "Quadratic equation has:",
+        "options": [
+          "1 root",
+          "2 roots",
+          "3 roots",
+          "No root"
+        ],
+        "answer": "2 roots"
+      },
+      {
+        "id": "79",
+        "question": "Derivative represents:",
+        "options": [
+          "Area",
+          "Slope",
+          "Volume",
+          "Constant"
+        ],
+        "answer": "Slope"
+      },
+      {
+        "id": "80",
+        "question": "If A = B, then:",
+        "options": [
+          "A > B",
+          "A < B",
+          "A and B are equal",
+          "No relation"
+        ],
+        "answer": "A and B are equal"
+      }
+    ],
+    "computer": [
+      {
+        "id": "81",
+        "question": "Which device is used to process data?",
+        "options": [
+          "Monitor",
+          "CPU",
+          "Keyboard",
+          "Mouse"
+        ],
+        "answer": "CPU"
+      },
+      {
+        "id": "82",
+        "question": "RAM is:",
+        "options": [
+          "Permanent memory",
+          "Temporary memory",
+          "Input device",
+          "Output device"
+        ],
+        "answer": "Temporary memory"
+      },
+      {
+        "id": "83",
+        "question": "Which language is machine level language?",
+        "options": [
+          "Python",
+          "Assembly",
+          "C++",
+          "Java"
+        ],
+        "answer": "Assembly"
+      },
+      {
+        "id": "84",
+        "question": "HTML is used for:",
+        "options": [
+          "Programming",
+          "Database",
+          "Web structure",
+          "Graphics"
+        ],
+        "answer": "Web structure"
+      },
+      {
+        "id": "85",
+        "question": "Full form of CPU:",
+        "options": [
+          "Central Program Unit",
+          "Central Processing Unit",
+          "Control Processing Unit",
+          "Central Power Unit"
+        ],
+        "answer": "Central Processing Unit"
+      },
+      {
+        "id": "86",
+        "question": "Which is an input device?",
+        "options": [
+          "Printer",
+          "Monitor",
+          "Keyboard",
+          "Speaker"
+        ],
+        "answer": "Keyboard"
+      },
+      {
+        "id": "87",
+        "question": "Binary system uses:",
+        "options": [
+          "0 and 1",
+          "0 to 9",
+          "A to Z",
+          "All numbers"
+        ],
+        "answer": "0 and 1"
+      },
+      {
+        "id": "88",
+        "question": "Which is system software?",
+        "options": [
+          "MS Word",
+          "Windows",
+          "Excel",
+          "PowerPoint"
+        ],
+        "answer": "Windows"
+      },
+      {
+        "id": "89",
+        "question": "Database is used to:",
+        "options": [
+          "Store data",
+          "Draw images",
+          "Play games",
+          "Browse internet"
+        ],
+        "answer": "Store data"
+      },
+      {
+        "id": "90",
+        "question": "Internet is a:",
+        "options": [
+          "Software",
+          "Network",
+          "Device",
+          "Language"
+        ],
+        "answer": "Network"
+      },
+      {
+        "id": "91",
+        "question": "Which protocol is used for web browsing?",
+        "options": [
+          "FTP",
+          "HTTP",
+          "SMTP",
+          "TCP"
+        ],
+        "answer": "HTTP"
+      },
+      {
+        "id": "92",
+        "question": "Compiler is used to:",
+        "options": [
+          "Execute program",
+          "Translate code",
+          "Delete files",
+          "Store data"
+        ],
+        "answer": "Translate code"
+      },
+      {
+        "id": "93",
+        "question": "Which memory is fastest?",
+        "options": [
+          "RAM",
+          "Cache",
+          "Hard disk",
+          "ROM"
+        ],
+        "answer": "Cache"
+      },
+      {
+        "id": "94",
+        "question": "Operating system is:",
+        "options": [
+          "Hardware",
+          "Software",
+          "Network",
+          "Device"
+        ],
+        "answer": "Software"
+      },
+      {
+        "id": "95",
+        "question": "Which is programming language?",
+        "options": [
+          "HTML",
+          "CSS",
+          "Python",
+          "HTTP"
+        ],
+        "answer": "Python"
+      },
+      {
+        "id": "96",
+        "question": "Virus in computer is:",
+        "options": [
+          "Hardware",
+          "Software",
+          "Malicious program",
+          "Device"
+        ],
+        "answer": "Malicious program"
+      },
+      {
+        "id": "97",
+        "question": "Cloud computing means:",
+        "options": [
+          "Local storage",
+          "Internet based storage",
+          "Offline system",
+          "Hardware system"
+        ],
+        "answer": "Internet based storage"
+      },
+      {
+        "id": "98",
+        "question": "Which is output device?",
+        "options": [
+          "Keyboard",
+          "Mouse",
+          "Printer",
+          "Scanner"
+        ],
+        "answer": "Printer"
+      },
+      {
+        "id": "99",
+        "question": "URL stands for:",
+        "options": [
+          "Uniform Resource Locator",
+          "Unique Resource Link",
+          "Universal Routing Link",
+          "Unified Resource Locator"
+        ],
+        "answer": "Uniform Resource Locator"
+      },
+      {
+        "id": "100",
+        "question": "AI stands for:",
+        "options": [
+          "Automatic Intelligence",
+          "Artificial Intelligence",
+          "Advanced Internet",
+          "Applied Interface"
+        ],
+        "answer": "Artificial Intelligence"
+      }
+    ]
+  },
+  "bachelors": {
+    "cn": [
+  {
+    "id": "1",
+    "question": "In the layer hierarchy as the data packet moves from the upper to the lower layers (sender side), headers are ___________",
+   "options":["Added",
+    "Removed",
+   "Rearranged",
+    "Remain the same"],
+    "answer": "A"
+  },
+  {
+    "id": "2",
+    "question": "The structure or format of data is called ___________",
+    "options":["Syntax",
+    "Semantics",
+    "Struct",
+    "Formatting"],
+    "answer": "A"
+  },
+  {
+    "id": "3",
+    "question": "Communication between a computer and a keyboard involves ______________ transmission",
+    "options":["Automatic",
+    "Half-duplex",
+    "Full-duplex",
+  "Simplex"],
+    "answer": "D"
+  },
+  {
+    "id": "4",
+    "question": "The first Network was called ________",
+    "options":["CNNET",
+  "NSFNET",
+  "ASAPNET",
+   "ARPANET"],
+    "answer": "D"
+  },
+  {
+    "id": "5",
+    "question": "A _______ is the physical path over which a message travels.",
+   "options":["Path",
+    "Medium",
+    "Protocol",
+    "Route"],
+    "answer": "B"
+  },
+  {
+    "id": "6",
+    "question": "Which of this is not a network edge device?",
+    "options":["PC",
+    "SmartPhones",
+    "Servers",
+    "Switch"],
+    "answer": "D"
+  },
+  {
+    "id": "7",
+    "question": "A _________ set of rules that governs data",
+  "options":["Protocol",
+  "Standards",
+   "RFCs",
+    "Servers"],
+    "answer": "A"
+  },
+  {
+    "id": "8",
+    "question": "Three or more devices share a link in ________ connection.",
+   "options":["Uniport",
+   "Multiport",
+    "Point to point",
+    "Simplex"],
+    "answer": "B"
+  },
+  {
+    "id": "9",
+    "question": "When collection of various computers seems a single coherent system to its client, then it is called _________",
+    "options":["Computer Network",
+    "Distributed System",
+    "Networking System",
+    "Mail System"],
+    "answer": "B"
+  },
+  {
+    "id": "10",
+    "question": "Two devices are in network if __________",
+    "options":["A process in one device is able to exchange information with a process in another device",
+    "a process is running on both devices",
+    "PIDs of the processes running of different devices are same",
+    "All of the above"],
+    "answer": "A"
+  },
+  {
+    "id": "11",
+    "question": "Which of the following computer networks is built on the top of another network?",
+    "options":["Prior Network",
+    "Chief Network",
+    "Prime Network",
+   "Overlay Network"],
+    "answer": "D"
+  },
+  {
+    "id": "12",
+    "question": "A __________ is a device that forwards packets between networks by processing the routing information included in the packet.",
+    "options":["Bridge",
+    "Firewall",
+    "Router",
+    "Hub"],
+    "answer": "C"
+  },
+  {
+    "id": "13",
+    "question": "A list of protocols used by a system, one protocol per layer, is called ________",
+    "options":["Protocol Architecture",
+    "Protocol Stack",
+    "Protocol Suite",
+    "Protocol System"],
+    "answer": "B"
+  },
+  {
+    "id": "14",
+    "question": "Network congestion occurs _________",
+    "options":["In case of traffic overloading",
+    "When a system terminates",
+    "when connection between two nodes terminates",
+    "In case of transfer failure"],
+    "answer": "A"
+  },
+  {
+    "id": "15",
+    "question": "Which of the following networks extends a private network across public networks?",
+    "options":["Local Area Network",
+    "Virtual Private Network",
+    "Enterprise private network",
+    "Storage area network"],
+    "answer": "B"
+  },
+  {
+    "id": "16",
+    "question": "The function of DSLAM is to __________",
+    "options":["Convert analog signals into digital signals",
+    "Convert digital signals into analog signals",
+    "Amplify digital signals",
+   "De-amplify digital signals"],
+    "answer": "A"
+  },
+  {
+    "id": "17",
+    "question": "StarBand provides __________",
+    "options":["FTTH internet access",
+    "Cable access",
+    "Telephone access",
+    "Satellite access"],
+    "answer": "D"
+  },
+  {
+    "id": "18",
+    "question": "ONT is connected to splitter using _________",
+    "options":["High speed fibre cable",
+   "HFC",
+    "Optical cable",
+    "Twisted pair cable"],
+    "answer": "C"
+  },
+  {
+    "id": "19",
+    "question": "How many layers are present in the Internet protocol stack (TCP/IP model)?",
+    "options":[ "5",
+    "7",
+    "6",
+    "10"],
+    "answer": "A"
+  },
+  {
+    "id": "20",
+    "question": "The number of layers in ISO OSI reference model is __________",
+   "options":["5",
+    "6",
+    "7",
+    "10"],
+    "answer": "C"
+  },
+  {
+    "id": "21",
+    "question": "Which of the following layers is an addition to OSI model when compared with TCP IP model?",
+    "options":["Application Layer",
+   "Presentation Layer",
+   "Session Layer",
+   "Session and Presentation layer"],
+    "answer": "D"
+  },
+  {
+    "id": "22",
+    "question": "The functionalities of the presentation layer include ____________",
+    "options":["Data Compression",
+    "Data encryption",
+   "Data De-cryption",
+   "All of the mentioned"],
+    "answer": "D"
+  },
+  {
+    "id": "23",
+    "question": "Delimiting and synchronization of data exchange is provided by __________",
+   "options":[
+    "Application Layer",
+    "Session Layer",
+    "Transport layer",
+    "Link layer"],
+    "answer": "B"
+  },
+  {
+    "id": "24",
+    "question": "In OSI model, when data is sent from device A to device B, the 5th layer to receive data at B is _________",
+    "options":[
+      "Application Layer",
+  "Transport layer",
+  "Link layer",
+  "Session layer"],
+    "answer": "D"
+  },
+  {
+    "id": "25",
+    "question": "Which address is used on the internet for employing the TCP/IP protocols?",
+  "options":[
+    "Physical address and logical address",
+   "port address",
+   "specific address",
+    "All of the mentioned"],
+    "answer": "D"
+  },
+  {
+    "id": "26",
+    "question": "Which layer is responsible for process to process delivery in a general network model?",
+    "options":["Transport layer",
+    "Network layer",
+    "Session layer",
+    "Data link layer"],
+    "answer": "A"
+  },
+  {
+    "id": "27",
+    "question": "Which address is used to identify a process on a host by the transport layer?",
+   "options":[
+    "Physical address",
+  "logical address",
+"port address",
+  "specific address"],
+    "answer": "C"
+  },
+  {
+    "id": "28",
+    "question": "Transmission data rate is decided by ____________",
+   "options":["transport",
+    "network layer",
+   "data link layer",
+  "physical layer"],
+    "answer": "D"
+  },
+  {
+    "id": "29",
+    "question": "The method of communication in which transmission takes place in both directions, but only in one direction at a time is called",
+    "options":[
+    "simplex",
+    "four wire circuit",
+    "full duplex",
+    "half duplex"],
+    "answer": "D"
+  },
+  {
+    "id": "30",
+    "question": "Error detection at the data link level is acheived by",
+    "options":[
+    "bit stuffing",
+    "cyclic redundancy codes",
+    "Hamming codes",
+    "equalization"],
+    "answer": "B"
+  },
+  {
+    "id": "31",
+    "question": "The topology with highest reliability is",
+   "options":[ 
+  "bus topology",
+   "star topology",
+   "ring topology",
+    "mesh topology"],
+    "answer": "D"
+  },
+  {
+    "id": "32",
+    "question": "baud means",
+    "options":[
+    "the number of bits transmitted per unit time",
+  "the number of bytes transmitted per unit time",
+    "the rate at which the signal changes",
+    "None of the mentioned"],
+    "answer": "C"
+  },
+  
+  {
+    "id": "33",
+    "question": "Unmodulated signal coming from a transmitter is known as",
+    "options":[ 
+      "carrier signal",
+    "baseband signal",
+    "primary signal",
+    "None of the mentioned"],
+    "answer": "B"
+  }
+],
+    "os": [
+      {
+        "id": "1",
+        "question": "What is an operating system?",
+        "options": [
+          "collection of programs that manages hardware resources",
+          "system service provider to the application programs",
+          "interface between the hardware and application programs",
+          "all of the mentioned"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "2",
+        "question": "To access the services of operating system, the interface is provided by the _____",
+        "options": [
+          "System Calls",
+          "API",
+          "Library",
+          "Assembly Instructions"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "3",
+        "question": "Which one of the following is not true?",
+        "options": [
+          "kernel is the program that constitutes the central core of the operating system",
+          "kernel is the first part of operating system to load into memory during booting",
+          "kernel is made of various modules which can not be loaded in running operating system",
+          "kernel remains in the memory during the entire computer session"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "4",
+        "question": "Which one of the following error will be handle by the operating system?",
+        "options": [
+          "power failure",
+          "lack of paper in printer",
+          "connection failure in the network",
+          "all of the mentioned"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "5",
+        "question": "What is the main function of the command interpreter?",
+        "options": [
+          "to get and execute the next user-specified command",
+          "to provide the interface between the API and application program",
+          "to handle the files in operating system",
+          "none of the mentioned"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "6",
+        "question": "In Operating Systems, which of the following is/are CPU scheduling algorithms?",
+        "options": [
+          "Round Robin",
+          "Shortest Job First",
+          "Priority",
+          "All of the mentioned"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "7",
+        "question": "If a process fails, most operating system write the error information to a __",
+        "options": [
+          "new file",
+          "log file",
+          "another running process",
+          "none of the mentioned"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "8",
+        "question": "Which facility dynamically adds probes to a running system, both in user processes and in the kernel?",
+        "options": [
+          "DTrace",
+          "DLocate",
+          "DMap",
+          "DAdd"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "9",
+        "question": "Which one of the following is not a real time operating system?",
+        "options": [
+          "VxWorks",
+          "QNX",
+          "RTLinux",
+          "Palm OS"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "10",
+        "question": "The OS X has ____",
+        "options": [
+          "Monolithic kernal",
+          "hybrid kernal",
+          "microkernel",
+          "monolithic kernel with module"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "11",
+        "question": "CPU scheduling is the basis of _____",
+        "options": [
+          "Multi-programming operating systems",
+          "Larger memory sized systems",
+          "Multi-processing systems",
+          "None of the mentioned"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "12",
+        "question": "Where is the operating system placed in the memory?",
+        "options": [
+          "either in low or high memory (depending on the location of interrupt vector)",
+          "in the low memory",
+          "in high memory",
+          "none of the mentioned"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "13",
+        "question": "In operating system, each process has its own",
+        "options": [
+          "open files",
+          "pending alarms, signals and signal handlers",
+          "address space and global variables",
+          "all of the mentioned"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "14",
+        "question": "In a timeshare operating system, when the time slot assigned to a process is completed, the process switches from the current state to?",
+        "options": [
+          "Suspended state",
+          "Terminated state",
+          "Ready state",
+          "Blocked state"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "15",
+        "question": "Cascading termination refers to the termination of all child processes if the parent process terminates __",
+        "options": [
+          "Normally or abnormally",
+          "Abnormally",
+          "Normally",
+          "None of the mentioned"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "16",
+        "question": "When a process is in a “Blocked” state waiting for some I/O service. When the service is completed, it goes to then",
+        "options": [
+          "Terminated state",
+          "Suspended state",
+          "Running state",
+          "Ready state"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "17",
+        "question": "Transient operating system code is a code that",
+        "options": [
+          "always stays in memory",
+          "never enter in memory space",
+          "comes and goes as needed",
+          "is not easily accessible"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "18",
+        "question": "The FCFS algorithm is particularly troublesome for ____",
+        "options": [
+          "Operating system",
+          "Multiprocessor systems",
+          "Time sharing sytems",
+          "Multiprogramming systems"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "19",
+        "question": "For an effective operating system, when to check for deadlock?",
+        "options": [
+          "every time a resource request is made and at fixed time interval",
+          "at fixed time intervals",
+          "every time a resource request is made",
+          "none of the mentioned"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "20",
+        "question": "The operating system is responsible for?",
+        "options": [
+          "Bad-block recovery",
+          "Booting from disk",
+          "Disk Initialization",
+          "all of the mentioned"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "21",
+        "question": "The operating system maintains a __ table that keeps track of how many frames have been allocated, how many are there, and how many are available",
+        "options": [
+          "memory",
+          "mapping",
+          "page",
+          "frame"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "22",
+        "question": "To obtain better memory utilization, dynamic loading is used. With dynamic loading, a routine is not loaded until it is called. For implementing dynamic loading ____",
+        "options": [
+          "special support from operating system is essential",
+          "special support from hardware is required",
+          "user programs can implement dynamic loading without any special support from hardware or operating system",
+          "special support from both hardware and operating system is essential"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "23",
+        "question": "In real time operating system ____",
+        "options": [
+          "process scheduling can be done only once",
+          "all processes have the same priority",
+          "kernel is not required",
+          "a task must be serviced by its deadline period"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "24",
+        "question": "Hard real time operating system has ______ jitter than a soft real time",
+        "options": [
+          "equal",
+          "more",
+          "less",
+          "None of the mentioned"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "25",
+        "question": "For real time operating systems, interrupt latency should be ____",
+        "options": [
+          "zero",
+          "minimal",
+          "maximum",
+          "dependent on the scheduling"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "26",
+        "question": "Which one of the following is a real time operating system?",
+        "options": [
+          "Windows CE",
+          "RTLinux",
+          "VxWorks",
+          "All of the mentioned"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "27",
+        "question": "The priority of a process will ______ if the scheduler assigns it a static priority.",
+        "options": [
+          "depends on the operating sytem",
+          "change",
+          "remain unchanged",
+          "None of the mentioned"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "28",
+        "question": "What are the characteristics of Host based IDS?",
+        "options": [
+          "Logs are analysed to detect tails of intrusion",
+          "The host operating system logs in the audit information",
+          "Logs includes logins, file opens, and program executions",
+          "All of the mentioned"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "29",
+        "question": "The information about all files is kept in ____",
+        "options": [
+          "operating system",
+          "Seperate directory structure",
+          "swap space",
+          "none of the mentioned"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "30",
+        "question": "The operating system keeps a small table containing information about all open files called ____",
+        "options": [
+          "file table",
+          "directory table",
+          "open-file table",
+          "system table"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "31",
+        "question": "What will happen in the single level directory?",
+        "options": [
+          "All files are contained in the same directory",
+          "All files are contained in different directories all at the same level",
+          "Depends on the operating system",
+          "None of the mentioned"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "32",
+        "question": "The operating system ___ the links when traversing directory trees, to preserve the acyclic structure of the system.",
+        "options": [
+          "Deletes",
+          "Considers",
+          "Ignores",
+          "None of the mentioned"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "33",
+        "question": "When there are multiple operating systems in a computer, the decision to load a particular one is done by?",
+        "options": [
+          "process control block",
+          "file control block",
+          "boot loader",
+          "bootstrap"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "34",
+        "question": "Whenever a process needs I/O, to or from a disk, it issues a ______",
+        "options": [
+          "system call to the operating system",
+          "a special procedure",
+          "system call to the CPU",
+          "all of the mentioned"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "35",
+        "question": "The ___ program initializes all aspects of the system, from CPU registers to device controllers and the contents of main memory, and then starts the operating system.",
+        "options": [
+          "Bootstrap",
+          "Main",
+          "Bootloader",
+          "Rom"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "36",
+        "question": "In SCSI disks used in high end PCs, the controller maintains a list of ___ on the disk. The disk is initialized during ____ formatting which sets aside spare sectors not visible to the operating system.",
+        "options": [
+          "destroyed blocks, partitioning",
+          "bad blocks, low level formatting",
+          "destroyed blocks, high level formatting",
+          "bad blocks, partitioning"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "37",
+        "question": "Which principle states that programs, users, and even the systems be given just enough privileges to perform their task?",
+        "options": [
+          "principle of least privilege",
+          "principle of process scheduling",
+          "principle of operating system",
+          "None of the mentioned"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "38",
+        "question": "Network operating system runs on _____",
+        "options": [
+          "every system in the network",
+          "server",
+          "both server and every system in the network",
+          "None of the mentioned"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "39",
+        "question": "What are the types of distributed operating systems?",
+        "options": [
+          "zone base OS",
+          "level based os",
+          "Network OS",
+          "All of the mentioned"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "40",
+        "question": "In Unix, which system call creates the new process?",
+        "options": [
+          "create",
+          "fork",
+          "new",
+          "None of the mentioned"
+        ],
+        "answer": "B"
+      }
+    ],
+    "dsa": [
+      {
+        "id": "1",
+        "question": "Which of the following statements for a simple graph is correct?",
+        "options": [
+          "Every path is a trail",
+          "Every trail is a path",
+          "Every trail is a path as well as every path is a trail",
+          "Path and trail have no relation"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "2",
+        "question": "A graph with all vertices having equal degree is known as a ____",
+        "options": [
+          "Multi Graph",
+          "Regular Graph",
+          "Simple Graph",
+          "Complete Graph"
+        ],
+        "answer": "B"
+      },
+      
+      {
+        "id": "3",
+        "question": "What is the number of edges present in a complete graph having n vertices?",
+        "options": [
+          "(n*(n+1))/2",
+          "(n*(n-1))/2",
+          "n",
+          "insufficient information"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "4",
+        "question": "Which of the following ways can be used to represent a graph?",
+        "options": [
+          "Adjacency List and Adjacency Matrix",
+          "Incidence Matrix",
+          "Adjacency List, Adjacency Matrix as well as Incidence Matrix",
+          "No way to represent"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "5",
+        "question": "In a simple graph, the number of edges is equal to twice the sum of the degrees of the vertices.",
+        "options": [
+          "True",
+          "False",
+          "",
+          ""
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "6",
+        "question": "A connected planar graph having 6 vertices, 7 edges contains _____ regions.",
+        "options": [
+          "1",
+          "3",
+          "11",
+          "15"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "7",
+        "question": "If a simple graph G, contains n vertices and m edges, the number of edges in the Graph G'(Complement of G) is",
+        "options": [
+          "(n*n-n-2*m)/2",
+          "(n*n+n+2*m)/2",
+          "(n*n-n-2*m)/2",
+          "(n*n-n+2*m)/2"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "8",
+        "question": "Which of the following properties does a simple graph not hold?",
+        "options": [
+          "Must be connected",
+          "Must be unweighted",
+          "Must have no loops or multiple edges",
+          "Must have no multiple edges"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "9",
+        "question": "What is the maximum number of edges in a bipartite graph having 10 vertices?",
+        "options": [
+          "16",
+          "21",
+          "24",
+          "25"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "10",
+        "question": "Which of the following is true?",
+        "options": [
+          "A graph may contain no edges and many vertices",
+          "A graph may contain many edges and no vertices",
+          "A graph may contain no edges and no vertices",
+          "A graph may contain no vertices and many edges"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "11",
+        "question": "For which of the following combinations of the degrees of vertices, would the connected graph, be eulerian?",
+        "options": [
+          "1,2,3",
+          "2,3,4",
+          "2,4,5",
+          "1,3,5"
+        ],
+        "answer": "A"
+      }
+    ],
+  "SE": [
+    {
+      "id": "1",
+      "question": "Software engineering primarily aims on developing",
+      "options": ["reliable software", "cost effective software", "reliable and cost effective software", "None of the mentioned"],
+      "answer": "C"
+    },
+    {
+      "id": "2",
+      "question": "A good specification should be",
+      "options": ["unambiguous", "distinctly specific", "functional", "All of the mentioned"],
+      "answer": "D"
+    },
+    {
+      "id": "3",
+      "question": "Which of the following is a tool in design phase?",
+      "options": ["Abstraction", "Refinement", "Information hiding", "All of the mentioned"],
+      "answer": "D"
+    },
+    {
+      "id": "4",
+      "question": "Information hiding is to hide from user details",
+      "options": ["that are relevant to him", "that are not relevant to him", "that may be maliciously handled by him", "that are confidential"],
+      "answer": "C"
+    },
+    {
+      "id": "5",
+      "question": "Which of the following comments about object oriented design is not true?",
+      "options": ["Objects inherit the properties of the class", "Classes are defined based on attributes", "An object can belong to two classes", "Classes are always different"],
+      "answer": "C"
+    },
+    {
+      "id": "6",
+      "question": "Design phase includes",
+      "options": ["data architectural procedural", "architectural procedural interface", "data architectural interface", "data architectural interface procedural"],
+      "answer": "D"
+    },
+    {
+      "id": "7",
+      "question": "Percentage increase in programming time",
+      "options": ["10", "5", "13", "8"],
+      "answer": "B"
+    },
+    {
+      "id": "8",
+      "question": "Execution time increase in FORTRAN",
+      "options": ["0.9", "8", "0.8", "9"],
+      "answer": "C"
+    },
+    {
+      "id": "9",
+      "question": "Execution time comparison",
+      "options": ["0.9", "0.1", "1", "0"],
+      "answer": "D"
+    },
+    {
+      "id": "10",
+      "question": "Performance comparison factor",
+      "options": ["1.5", "1.2", "1.1", "not better"],
+      "answer": "D"
+    },
+    {
+      "id": "11",
+      "question": "Data structure suitable discussed in",
+      "options": ["data design", "architectural design", "procedural design", "interface design"],
+      "answer": "A"
+    },
+    {
+      "id": "12",
+      "question": "Design phase approach",
+      "options": ["top-down", "bottom-up", "random", "centre"],
+      "answer": "A"
+    },
+    {
+      "id": "13",
+      "question": "Assertions are true",
+      "options": ["always", "sometimes", "many times", "never"],
+      "answer": "A"
+    },
+    {
+      "id": "14",
+      "question": "Paths equal to test data set",
+      "options": ["minimum", "maximum", "optimum", "supremum"],
+      "answer": "A"
+    },
+    {
+      "id": "15",
+      "question": "Total number of paths formula",
+      "options": ["xy+z", "xz+y", "x+y+z", "x(y+z)"],
+      "answer": "D"
+    },
+    {
+      "id": "16",
+      "question": "Case statement paths",
+      "options": ["x+n", "x^n", "xlogx", "xn"],
+      "answer": "D"
+    },
+    {
+      "id": "17",
+      "question": "Structured programming includes",
+      "options": ["sequencing", "alteration", "iteration", "all"],
+      "answer": "D"
+    },
+    {
+      "id": "18",
+      "question": "Desirable module property",
+      "options": ["independency", "low cohesion", "high coupling", "multi functional"],
+      "answer": "A"
+    },
+    {
+      "id": "19",
+      "question": "Maintenance type with max effort",
+      "options": ["adaptive", "corrective", "preventive", "perfective"],
+      "answer": "D"
+    },
+    {
+      "id": "20",
+      "question": "Important coding aspect",
+      "options": ["readability", "productivity", "memory", "brevity"],
+      "answer": "A"
+    },
+    {
+      "id": "21",
+      "question": "Improve readability",
+      "options": ["avoid goto", "good naming", "modularization", "all"],
+      "answer": "D"
+    },
+    {
+      "id": "22",
+      "question": "Data flow model shows",
+      "options": ["data relation", "processing and flow", "decision control", "network"],
+      "answer": "B"
+    },
+    {
+      "id": "23",
+      "question": "Communication paths",
+      "options": ["n(n-1)/2", "nlogn", "n", "n(n+1)/2"],
+      "answer": "A"
+    },
+    {
+      "id": "24",
+      "question": "Software robustness means",
+      "options": ["reliability", "robustness", "fault tolerance", "portability"],
+      "answer": "B"
+    },
+    {
+      "id": "25",
+      "question": "Decision table rules",
+      "options": ["n", "2n", "2^n", "log"],
+      "answer": "C"
+    },
+    {
+      "id": "26",
+      "question": "Which is not true",
+      "options": ["content coupling desirable", "logical cohesion desirable", "stamp over functional", "all"],
+      "answer": "D"
+    },
+    {
+      "id": "27",
+      "question": "Configuration management not concerned",
+      "options": ["code change", "hardware choice", "docs", "versions"],
+      "answer": "B"
+    },
+    {
+      "id": "28",
+      "question": "Cyclomatic complexity integration",
+      "options": ["19", "21", "20", "10"],
+      "answer": "A"
+    },
+    {
+      "id": "29",
+      "question": "Coupling cohesion change",
+      "options": ["no change", "cohesion up", "cohesion down", "both increase"],
+      "answer": "A"
+    },
+    {
+      "id": "30",
+      "question": "Putnam effort",
+      "options": ["50", "7.16", "25", "6.25"],
+      "answer": "D"
+    },
+    {
+      "id": "31",
+      "question": "Coupling order",
+      "options": ["I-II-III-IV-V", "V-IV-III-II-I", "I-III-V-II-IV", "IV-II-V-III-I"],
+      "answer": "A"
+    },
+    {
+      "id": "32",
+      "question": "Not an assertion",
+      "options": ["option1", "option2", "option3", "option4"],
+      "answer": "D"
+    },
+    {
+      "id": "33",
+      "question": "Program failure probability",
+      "options": ["50", "60", "10", "70"],
+      "answer": "D"
+    },
+    {
+      "id": "34",
+      "question": "Joint success probability",
+      "options": ["0.9", "0.81", "0.729", "0.1"],
+      "answer": "B"
+    },
+    {
+      "id": "35",
+      "question": "Graph concept in testing",
+      "options": ["cyclomatic", "circuit", "Eulerian", "none"],
+      "answer": "A"
+    },
+    {
+      "id": "36",
+      "question": "Decision table implication",
+      "options": ["incomplete", "faulty", "incorrect", "all"],
+      "answer": "A"
+    },
+    {
+      "id": "37",
+      "question": "Ada supports",
+      "options": ["abstraction", "generic", "info hiding", "all"],
+      "answer": "D"
+    },
+    {
+      "id": "38",
+      "question": "Reliability value",
+      "options": ["greater", "equal", "at most", "at least"],
+      "answer": "C"
+    },
+    {
+      "id": "39",
+      "question": "Acceptance testing",
+      "options": ["regression", "integration", "unit", "functional"],
+      "answer": "D"
+    },
+    {
+      "id": "40",
+      "question": "Program is model of system",
+      "options": ["solution", "replacement", "simulation", "model"],
+      "answer": "C"
+    }
+  ],
+  "ITC": [
+    {"id":"1","question":"Which tool is used to find a similar word in a document?","options":["Find and Replace","Dictionary","Thesaurus","Finder"],"answer":"C"},
+    {"id":"2","question":"Which language is close to human language?","options":["High-Level language","Low-Level language","Machine language","Programming language"],"answer":"A"},
+    {"id":"3","question":"CBT is an abbreviation for?","options":["Computer-Based Technology","Computer Based Trading","Computer Based Training","None Of These"],"answer":"C"},
+    {"id":"4","question":"A virus which self-replicate itself and spread across network is called?","options":["Bomb","Hoax","Bug","Worm"],"answer":"D"},
+    {"id":"5","question":"IDE is an abbreviation for?","options":["Integrated Dual Environment","Integrated Development Environment","Inter Development Environment","Inter Dual Environment"],"answer":"B"},
+    {"id":"6","question":"Same data stored in multiple places is called","options":["Data Inconsistency","Data Dependence","Data Redundancy","None of These"],"answer":"C"},
+    {"id":"7","question":"Conio.h stands for","options":["Common input output","Complex input output","Character input output","Console input output"],"answer":"D"},
+    {"id":"8","question":"Way data is stored in a file is called","options":["File organization","Data distribution","Indexes","Constraints"],"answer":"A"},
+    {"id":"9","question":"Collection of rules for writing programs is called","options":["Program standards","Program logic","Syntax","None"],"answer":"C"},
+    {"id":"10","question":"SQL stands for","options":["Simple Query Language","Sequential Query Language","Structured Query Language","None"],"answer":"C"},
+    {"id":"11","question":"Electronic tool for input process output","options":["OS","Motherboard","Computer","CPU"],"answer":"C"},
+    {"id":"12","question":"Worldwide network of computers","options":["CPU","Internet","RAM","Network"],"answer":"B"},
+    {"id":"13","question":"Device used to input data","options":["Output unit","Input unit","Pressing unit","Communication unit"],"answer":"B"},
+    {"id":"14","question":"Best quality graphics output device","options":["Laser printer","Inkjet printer","Plotter","Dot matrix"],"answer":"C"},
+    {"id":"15","question":"Translator for assembly to machine code","options":["Compiler","Interpreter","Debugger","Assembler"],"answer":"D"},
+    {"id":"16","question":"Pascaline invented in","options":["1617","1620","1642","1837"],"answer":"C"},
+    {"id":"17","question":"Computer system units include","options":["Input output","Storage","Processing","All"],"answer":"D"},
+    {"id":"18","question":"Value of bead in abacus heaven","options":["1","3","5","7"],"answer":"C"},
+    {"id":"19","question":"To hear sound you need","options":["Sound card and speaker","Microphone","Both","None"],"answer":"A"},
+    {"id":"20","question":"Hard disk coating","options":["Magnetic oxide","Optical oxide","Carbon layer","All"],"answer":"A"},
+    {"id":"21","question":"Offline device is","options":["Not connected to CPU","Connected to CPU","Storage device","IO device"],"answer":"A"},
+    {"id":"22","question":"First general purpose electronic computer","options":["UNIVAC","EDVAC","ENIAC","All"],"answer":"C"},
+    {"id":"23","question":"Digital computer developed in","options":["USSR","Japan","USA","UK"],"answer":"C"},
+    {"id":"24","question":"Records in tape defined by","options":["Block definition","Record clause","Blocking factor","Record per block"],"answer":"C"},
+    {"id":"25","question":"High level language also called","options":["Problem oriented","Business oriented","Mathematical","All"],"answer":"D"},
+    {"id":"26","question":"Raw facts and figures","options":["Information","Facts","Data","None"],"answer":"C"},
+    {"id":"27","question":"Difference of microprocessor","options":["Large words","Short words","No IO device","Same cycle"],"answer":"C"},
+    {"id":"28","question":"Program to change values and see result","options":["Desktop publishing","Database","Spreadsheet","All"],"answer":"C"},
+    {"id":"29","question":"Not feature of first generation","options":["Vacuum tubes","High heat","Assembly language","None"],"answer":"C"},
+    {"id":"30","question":"UNIVAC full form","options":["Universal automatic computer","Universal array computer","Unique automatic computer","Unvalued automatic computer"],"answer":"A"},
+    {"id":"31","question":"Basic operations of computer","options":["Arithmetic","Logical","Storage","All"],"answer":"D"},
+    {"id":"32","question":"Types of chips","options":["External memory","Primary memory","Microprocessor","Both B and C"],"answer":"D"},
+    {"id":"33","question":"Microprocessor generation","options":["First","Second","Third","Fourth"],"answer":"D"},
+    {"id":"34","question":"Mainframe vs supercomputer","options":["Larger","Smaller","Few fast programs","Many programs fast"],"answer":"C"},
+    {"id":"35","question":"EBCDIC stands for","options":["Extended binary coded decimal interchange code","Extended bit code","Extended bit case","Extended binary case"],"answer":"A"},
+    {"id":"36","question":"Brain of computer","options":["ALU","CU","Memory","CPU"],"answer":"D"},
+    {"id":"37","question":"Disk capacity depends on","options":["Tracks per inch","Bits per inch","Disk pack","All"],"answer":"D"},
+    {"id":"38","question":"Main memory types","options":["Primary secondary","Random sequential","ROM RAM","All"],"answer":"C"},
+    {"id":"39","question":"Temporary storage for speed difference","options":["Memory","Buffer","Accumulator","Address"],"answer":"B"},
+    
+    {"id":"40",
+    "question":"Computer not tired called",
+    "options":["Accuracy","Reliability","Diligence","Versatility"],
+    "answer":"C"}
+  ]
+  }
+}

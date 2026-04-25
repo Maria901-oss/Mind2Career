@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_MEDIA_DOCUMENTS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -14,6 +15,18 @@
         android:roundIcon="@drawable/ic_launcher_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mind2Career">
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadActivity"
+            android:exported="false" />
         <activity
             android:name=".RankingScreen"
             android:exported="false" />
@@ -33,7 +46,7 @@
             android:name=".RecommendationScreen"
             android:exported="false" />
         <activity
-            android:name=".AcademicScreen"
+            android:name=".AcademicTestActivity"
             android:exported="false" />
         <activity
             android:name=".PesonalityAssesment"

@@ -3,16 +3,15 @@ package com.example.mind2career
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import org.tensorflow.lite.Interpreter
 import java.io.BufferedReader
 import java.io.FileInputStream
@@ -22,130 +21,180 @@ import java.nio.channels.FileChannel
 
 class PesonalityAssesment : AppCompatActivity() {
 
-    private lateinit var questionList: List<questionItem>
-    private lateinit var questionAdapter: QuestionAdapter
     private lateinit var recyclerView: RecyclerView
-
-    private val NUM_PERSONALITY_CLASSES = 5 // set according to your model output
+    private var questionList = mutableListOf<questionItem>()
+    private var interpreter: Interpreter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_pesonality_assesment)
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         recyclerView = findViewById(R.id.recyclerQuestions)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        questionList = loadQuestionsFromCSV(this)
-        questionAdapter = QuestionAdapter(questionList)
-        recyclerView.adapter = questionAdapter
 
-        val btnSubmit = findViewById<Button>(R.id.btnSubmit)
-        btnSubmit.setOnClickListener {
+        loadQuestions()
+        recyclerView.adapter = QuestionAdapter(questionList)
+
+        loadModel()
+
+        findViewById<Button>(R.id.btnSubmit).setOnClickListener {
             handleSubmit()
         }
     }
 
-    private fun loadQuestionsFromCSV(context: Context): List<questionItem> {
-        val questionsList = mutableListOf<questionItem>()
+    // ================= CSV LOAD =================
+    private fun loadQuestions() {
+        try {
+            val files = assets.list("")
+            Log.d("ASSETS", files?.joinToString() ?: "No files")
 
-        val inputStream = context.assets.open("personality_questions.csv")
-        val reader = BufferedReader(InputStreamReader(inputStream))
+            val inputStream = assets.open("personalityQuestion.csv")
+            val reader = BufferedReader(InputStreamReader(inputStream))
 
-        reader.readLine() // skip header
+            reader.readLine()
 
-        reader.forEachLine { line ->
-            val tokens = line.split(",")
-            if (tokens.size >= 6) {
-                val questionText = tokens[0].replace("\"", "").trim()
-                val options = tokens.subList(1, 6).map { it.replace("\"", "").trim() }
-                questionsList.add(questionItem(questionText, options))
+            reader.forEachLine { line ->
+                val tokens = line.split(",")
+                if (tokens.size >= 6) {
+                    val q = tokens[0].replace("\"", "").trim()
+                    val options = tokens.subList(1, 6).map { it.replace("\"", "").trim() }
+                    questionList.add(questionItem(q, options))
+                }
             }
-        }
 
-        reader.close()
-        return questionsList
+            reader.close()
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, "CSV Error: ${e.message}", Toast.LENGTH_LONG).show()
+        }
     }
 
+    // ================= MODEL LOAD =================
+    private fun loadModel() {
+        try {
+            interpreter = Interpreter(loadModelFile())
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, "Model load failed", Toast.LENGTH_LONG).show()
+            interpreter = null
+        }
+    }
+
+    private fun loadModelFile(): MappedByteBuffer {
+        val fileDescriptor = assets.openFd("personality_model.tflite")
+        val inputStream = FileInputStream(fileDescriptor.fileDescriptor)
+        val channel = inputStream.channel
+
+        return channel.map(
+            FileChannel.MapMode.READ_ONLY,
+            fileDescriptor.startOffset,
+            fileDescriptor.declaredLength
+        )
+    }
+
+    // ================= SUBMIT =================
     private fun handleSubmit() {
+
+        if (questionList.isEmpty()) {
+            Toast.makeText(this, "Questions not loaded", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val answers = questionList.map { it.selectedAnswer }
 
         if (answers.contains(0)) {
-            Toast.makeText(this, "Please answer all questions", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Answer all questions", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (interpreter == null) {
+            saveResultToFirebase("Balanced")
             return
         }
 
         runModel(answers)
     }
 
-    // Function to load model as MappedByteBuffer
-    private fun loadModelFile(): MappedByteBuffer {
-        val fileDescriptor = assets.openFd("personality_model.tflite")
-        val inputStream = FileInputStream(fileDescriptor.fileDescriptor)
-        val channel = inputStream.channel
-        val startOffset = fileDescriptor.startOffset
-        val declaredLength = fileDescriptor.declaredLength
-        return channel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
-    }
-
+    // ================= MODEL RUN =================
     private fun runModel(answers: List<Int>) {
-        val input = FloatArray(answers.size) { i -> answers[i].toFloat() / 5f }
 
-        // Load model using MappedByteBuffer
-        val tfliteModel = loadModelFile()
-        val interpreter = Interpreter(tfliteModel)
+        try {
+            val interpreter = this.interpreter ?: return
 
-        val output = FloatArray(NUM_PERSONALITY_CLASSES)
-        interpreter.run(input, output)
+            val inputSize = interpreter.getInputTensor(0).shape().last()
+            val input = Array(1) { FloatArray(inputSize) }
 
-        val personalityTraits = listOf("Agreeableness", "Balanced", "Conscientiousness",
-            "Extraversion", "Neuroticism", "Openness", "Hybrid_Extraversion_Agreeableness",
-            "Hybrid_Extraversion_Conscientiousness", "Hybrid_Extraversion_Neuroticism",
-            "Hybrid_Extraversion_Openness", "Hybrid_Agreeableness_Conscientiousness",
-            "Hybrid_Agreeableness_Neuroticism", "Hybrid_Agreeableness_Openness",
-            "Hybrid_Conscientiousness_Neuroticism", "Hybrid_Conscientiousness_Openness",
-            "Hybrid_Neuroticism_Openness", "Hybrid_Extraversion_Agreeableness_Openness",
-            "Hybrid_Extraversion_Agreeableness_Conscientiousness", "Hybrid_Extraversion_Agreeableness_Neuroticism",
-            "Hybrid_Extraversion_Conscientiousness_Neuroticism", "Hybrid_Extraversion_Conscientiousness_Openness",
-            "Hybrid_Extraversion_Neuroticism_Openness", "Hybrid_Agreeableness_Conscientiousness_Neuroticism",
-            "Hybrid_Agreeableness_Conscientiousness_Openness", "Hybrid_Agreeableness_Neuroticism_Openness",
-            "Hybrid_Conscientiousness_Neuroticism_Openness", "Hybrid_Extraversion_Agreeableness_Conscientiousness_Neuroticism",
-            "Hybrid_Extraversion_Agreeableness_Conscientiousness_Openness", "Hybrid_Extraversion_Agreeableness_Neuroticism_Openness",
-            "Hybrid_Extraversion_Conscientiousness_Neuroticism_Openness", "Hybrid_Agreeableness_Conscientiousness_Neuroticism_Openness",
-            "Hybrid_Extraversion_Agreeableness_Conscientiousness_Neuroticism_Openness")
-        val maxIndex = output.indices.maxByOrNull { output[it] } ?: 0
-        val predictedPersonality = personalityTraits[maxIndex]
+            for (i in 0 until inputSize) {
+                input[0][i] = if (i < answers.size)
+                    answers[i].toFloat() / 5f
+                else 0f
+            }
 
-        saveResultToFirebase(predictedPersonality)
+            val outputSize = interpreter.getOutputTensor(0).shape().last()
+            val output = Array(1) { FloatArray(outputSize) }
+
+            interpreter.run(input, output)
+
+            val result = output[0]
+
+            val traits = listOf(
+                "Agreeableness",
+                "Balanced",
+                "Conscientiousness",
+                "Extraversion",
+                "Neuroticism",
+                "Openness"
+            )
+
+            val index = result.indices.maxByOrNull { result[it] } ?: 0
+            val predicted = traits.getOrElse(index) { "Balanced" }
+
+            saveResultToFirebase(predicted)
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, "Model error, using default", Toast.LENGTH_SHORT).show()
+            saveResultToFirebase("Balanced")
+        }
     }
 
-    private fun saveResultToFirebase(predictedPersonality: String) {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
+    // ================= FIREBASE SAVE =================
+    private fun saveResultToFirebase(result: String) {
+
+        val user = FirebaseAuth.getInstance().currentUser
+
+        if (user == null) {
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_LONG).show()
+            return
+        }
+
         val db = FirebaseFirestore.getInstance()
 
-        val data = hashMapOf<String, Any>()
-        data["predictedPersonality"] = predictedPersonality
+        val data = hashMapOf(
+            "personality" to result
+        )
 
-        db.collection("users").document(userId)
-            .set(data)
+        db.collection("users").document(user.uid)
+            .set(data, SetOptions.merge())
             .addOnSuccessListener {
+                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
                 openNextScreen()
             }
-            .addOnFailureListener {
-                Toast.makeText(this, "Failed to save. Please try again.", Toast.LENGTH_SHORT).show()
+            .addOnFailureListener { e ->
+                e.printStackTrace()
+                Toast.makeText(this, "Save failed: ${e.message}", Toast.LENGTH_LONG).show()
             }
     }
 
+    // ================= NEXT SCREEN =================
     private fun openNextScreen() {
-        val intent = Intent(this, AcademicScreen::class.java)
-        startActivity(intent)
+        startActivity(Intent(this, AcademicTestActivity::class.java))
         finish()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        interpreter?.close()
+    }
 }
-
-

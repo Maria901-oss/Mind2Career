@@ -5,22 +5,48 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
+import com.tom_roush.pdfbox.android.PDFBoxResourceLoader
 import com.tom_roush.pdfbox.pdmodel.PDDocument
 import com.tom_roush.pdfbox.text.PDFTextStripper
 
 class ResumeUpload : AppCompatActivity() {
 
     private val PICK_PDF = 301
-
     private val auth = FirebaseAuth.getInstance()
     private val firestore = FirebaseFirestore.getInstance()
+
+    // ALL SKILLS COMBINED
+    private val allSkillsList = listOf(
+        "python","java","kotlin","swift","javascript","typescript",
+        "c++","c#","php","ruby","golang","rust","scala","dart",
+        "html","css","react","angular","vue","nodejs","django","flask",
+        "laravel","spring boot","android development","flutter",
+        "machine learning","data science","artificial intelligence",
+        "tensorflow","pytorch","firebase","sql","mongodb",
+        "aws","azure","docker","kubernetes","linux",
+        "cybersecurity","ethical hacking","networking","ccna",
+        "git","github","figma","canva","photoshop",
+        "leadership","communication","teamwork","problem solving",
+        "project management","digital marketing","seo","content writing",
+        "accounting","finance","teaching","research"
+    )
+
+    // REMOVE THESE FROM SKILLS
+    private val ignoreWords = listOf(
+        "english","urdu","arabic","chinese","french",
+        "german","spanish","ielts","toefl"
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resume_upload)
+
+        PDFBoxResourceLoader.init(applicationContext)
 
         findViewById<Button>(R.id.uploadButton).setOnClickListener {
             openPdfPicker()
@@ -30,7 +56,6 @@ class ResumeUpload : AppCompatActivity() {
     private fun openPdfPicker() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "application/pdf"
-        intent.addCategory(Intent.CATEGORY_OPENABLE)
         startActivityForResult(intent, PICK_PDF)
     }
 
@@ -38,60 +63,95 @@ class ResumeUpload : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == PICK_PDF && resultCode == Activity.RESULT_OK) {
-            val uri = data?.data
-            if (uri != null) {
-                extractAndSaveResume(uri)
-            }
+            val uri = data?.data ?: return
+            extractAndSave(uri)
         }
     }
 
-    private fun extractAndSaveResume(uri: Uri) {
+    private fun extractAndSave(uri: Uri) {
+
         try {
+            val btn = findViewById<Button>(R.id.uploadButton)
+            btn.isEnabled = false
+            btn.text = "Processing..."
+
             val inputStream = contentResolver.openInputStream(uri)
+                ?: throw Exception("Cannot open file")
+
             val document = PDDocument.load(inputStream)
             val text = PDFTextStripper().getText(document)
             document.close()
 
-            val extractedData = extractResumeData(text)
-            saveToFirestore(extractedData)
+            if (text.isBlank()) {
+                Toast.makeText(this, "PDF empty or scanned", Toast.LENGTH_LONG).show()
+                resetButton()
+                return
+            }
 
-        } catch (_: Exception) {
-            // Silent fail, no Toast
+            val skills = extractSkills(text)
+
+            saveToFirestore(skills)
+
+        } catch (e: Exception) {
+            Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+            resetButton()
         }
     }
 
-    private fun extractResumeData(text: String): HashMap<String, Any> {
-        val data = HashMap<String, Any>()
+    private fun extractSkills(text: String): List<String> {
 
-        // Extract skills dynamically: words that start with capital letters and are not common words
-        val skillRegex = Regex("\\b([A-Z][a-zA-Z0-9#+]+)\\b")
-        val skills = skillRegex.findAll(text)
-            .map { it.value }
-            .filter { it.length > 1 } // remove single letters
-            .toSet()
-            .toList()
+        val lowerText = text.lowercase()
 
-        // Extract education dynamically
-        val educationRegex = Regex(
-            "\\b(Bachelor|Master|BS|BSc|MS|MSc|Intermediate|FSc|High School|Matric)\\b",
-            RegexOption.IGNORE_CASE
-        )
-        val education = educationRegex.findAll(text)
-            .map { it.value }
-            .toSet()
-            .toList()
-
-        data["skills"] = skills
-        data["education"] = education
-
-        return data
+        return allSkillsList
+            .filter { skill ->
+                lowerText.contains(skill) &&
+                        !ignoreWords.contains(skill)
+            }
+            .map { skill ->
+                skill.split(" ").joinToString(" ") {
+                    it.replaceFirstChar { ch -> ch.uppercase() }
+                }
+            }
+            .distinct()   // remove duplicates
+            .sorted()
     }
 
-    private fun saveToFirestore(data: HashMap<String, Any>) {
-        val userId = auth.currentUser?.uid ?: return
+    private fun saveToFirestore(skills: List<String>) {
 
-        firestore.collection("resumes")
+        val userId = auth.currentUser?.uid
+        if (userId == null) {
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
+            resetButton()
+            return
+        }
+
+        firestore.collection("users")
             .document(userId)
-            .set(data)
+            .set(
+                mapOf("skills" to skills),
+                SetOptions.merge()
+            )
+            .addOnSuccessListener {
+
+                Toast.makeText(
+                    this,
+                    "${skills.size} skills saved",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                // MOVE TO NEXT SCREEN
+                startActivity(Intent(this, AfterAssesment::class.java))
+                finish()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Save failed", Toast.LENGTH_SHORT).show()
+                resetButton()
+            }
+    }
+
+    private fun resetButton() {
+        val btn = findViewById<Button>(R.id.uploadButton)
+        btn.isEnabled = true
+        btn.text = "Upload Resume"
     }
 }
