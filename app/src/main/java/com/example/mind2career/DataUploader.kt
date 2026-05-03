@@ -3,27 +3,19 @@ package com.example.mind2career
 import android.content.Context
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
+import org.json.JSONArray
 import org.json.JSONObject
 
 class DataUploader(private val context: Context) {
 
-    private val db = FirebaseFirestore.getInstance()
+    private val db  = FirebaseFirestore.getInstance()
     private val TAG = "DataUploader"
 
     fun uploadAll(onComplete: (Boolean, String) -> Unit) {
-
         uploadGrades { gOk ->
-            if (!gOk) {
-                onComplete(false, "Grades failed")
-                return@uploadGrades
-            }
-
+            if (!gOk) { onComplete(false, "Grades failed"); return@uploadGrades }
             uploadFields { fOk ->
-                if (!fOk) {
-                    onComplete(false, "Fields failed")
-                    return@uploadFields
-                }
-
+                if (!fOk) { onComplete(false, "Fields failed"); return@uploadFields }
                 uploadQuestions { qOk ->
                     onComplete(qOk, if (qOk) "All uploaded successfully" else "Questions failed")
                 }
@@ -31,189 +23,154 @@ class DataUploader(private val context: Context) {
         }
     }
 
-    // ================= GRADES =================
-    private fun uploadGrades(onDone: (Boolean) -> Unit) {
+    // ── GRADES ───────────────────────────────────────────────────────────────
 
+    private fun uploadGrades(onDone: (Boolean) -> Unit) {
         val grades = listOf(
-            "matric" to "Matric",
+            "matric"       to "Matric",
             "intermediate" to "Intermediate",
-            "undergraduate" to "Undergraduate"
+            // FIX 1: Dataset mein key "bachelors" hai, "undergraduate" nahi
+            "bachelors"    to "Bachelors"
         )
 
         val batch = db.batch()
-
-        grades.forEach {
-            val ref = db.collection("grades").document(it.first)
-            batch.set(ref, mapOf("name" to it.second))
+        grades.forEach { (id, name) ->
+            batch.set(db.collection("grades").document(id), mapOf("name" to name))
         }
 
         batch.commit()
-            .addOnSuccessListener {
-                Log.d(TAG, "Grades uploaded")
-                onDone(true)
-            }
-            .addOnFailureListener {
-                Log.e(TAG, "Grades failed: ${it.message}")
-                onDone(false)
-            }
+            .addOnSuccessListener { Log.d(TAG, "Grades uploaded"); onDone(true) }
+            .addOnFailureListener { Log.e(TAG, "Grades failed: ${it.message}"); onDone(false) }
     }
 
-    // ================= FIELDS =================
+    // ── FIELDS ───────────────────────────────────────────────────────────────
+
     private fun uploadFields(onDone: (Boolean) -> Unit) {
 
-        val subjectToGrades = mapOf(
-            "physics" to listOf("matric", "intermediate"),
-            "chemistry" to listOf("matric", "intermediate"),
-            "english" to listOf("matric"),
-            "biology" to listOf("matric", "intermediate"),
-            "computer" to listOf("matric", "intermediate"),
-            "maths" to listOf("matric", "intermediate"),
-            "cn" to listOf("undergraduate"),
-            "os" to listOf("undergraduate"),
-            "dsa" to listOf("undergraduate"),
-            "SE" to listOf("undergraduate"),
-            "ITC" to listOf("undergraduate")
-        )
-
-        val subjectNames = mapOf(
-            "cn" to "Computer Networks",
-            "os" to "Operating Systems",
-            "dsa" to "Data Structures",
-            "SE" to "Software Engineering",
-            "ITC" to "Introduction to Computing"
+        // FIX 2: gradeId "bachelors" hona chahiye "undergraduate" nahi
+        //        aur bachelor fields ka case bhi exact match karo (SE, ITC uppercase)
+        val fields = listOf(
+            // Matric
+            Triple("matric_physics",   "matric", "Physics"),
+            Triple("matric_chemistry", "matric", "Chemistry"),
+            Triple("matric_english",   "matric", "English"),
+            Triple("matric_biology",   "matric", "Biology"),
+            Triple("matric_computer",  "matric", "Computer Science"),
+            Triple("matric_maths",     "matric", "Maths"),
+            // Intermediate
+            Triple("intermediate_physics",   "intermediate", "Physics"),
+            Triple("intermediate_chemistry", "intermediate", "Chemistry"),
+            Triple("intermediate_biology",   "intermediate", "Biology"),
+            Triple("intermediate_maths",     "intermediate", "Maths"),
+            Triple("intermediate_computer",  "intermediate", "Computer Science"),
+            // Bachelors — field IDs dataset keys se exactly match karein
+            Triple("bachelors_cn",  "bachelors", "Computer Networks"),
+            Triple("bachelors_os",  "bachelors", "Operating Systems"),
+            Triple("bachelors_dsa", "bachelors", "Data Structures & Algorithms"),
+            Triple("bachelors_SE",  "bachelors", "Software Engineering"),
+            Triple("bachelors_ITC", "bachelors", "Introduction to Computing")
         )
 
         val batch = db.batch()
-
-        subjectToGrades.forEach { (subject, grades) ->
-
-            grades.forEach { grade ->
-
-                val id = "${grade}_${subject.lowercase()}"
-
-                val ref = db.collection("fields").document(id)
-
-                batch.set(ref, mapOf(
-                    "gradeId" to grade,
-                    "name" to (subjectNames[subject] ?: subject)
-                ))
-            }
+        fields.forEach { (id, gradeId, name) ->
+            batch.set(
+                db.collection("fields").document(id),
+                mapOf("gradeId" to gradeId, "name" to name)
+            )
         }
 
         batch.commit()
-            .addOnSuccessListener {
-                Log.d(TAG, "Fields uploaded")
-                onDone(true)
-            }
-            .addOnFailureListener {
-                Log.e(TAG, "Fields failed: ${it.message}")
-                onDone(false)
-            }
+            .addOnSuccessListener { Log.d(TAG, "Fields uploaded"); onDone(true) }
+            .addOnFailureListener { Log.e(TAG, "Fields failed: ${it.message}"); onDone(false) }
     }
 
-    // ================= QUESTIONS =================
+    // ── QUESTIONS ─────────────────────────────────────────────────────────────
+
     private fun uploadQuestions(onDone: (Boolean) -> Unit) {
 
         val json = try {
             context.assets.open("Academic_Dataset.json")
                 .bufferedReader().use { it.readText() }
         } catch (e: Exception) {
-            Log.e(TAG, "JSON load failed")
-            onDone(false)
-            return
+            Log.e(TAG, "Asset load failed: ${e.message}"); onDone(false); return
         }
 
-        val root = JSONObject(json)
+        val root = try {
+            JSONObject(json)
+        } catch (e: Exception) {
+            Log.e(TAG, "JSON parse failed: ${e.message}"); onDone(false); return
+        }
+
         val all = mutableListOf<Map<String, Any>>()
 
-        fun safeOptions(q: JSONObject): List<String> {
-            val arr = q.optJSONArray("options")
+        root.keys().forEach { gradeKey ->
+            val gradeObj = root.optJSONObject(gradeKey) ?: return@forEach
 
-            return if (arr != null && arr.length() >= 4) {
-                listOf(
-                    arr.optString(0),
-                    arr.optString(1),
-                    arr.optString(2),
-                    arr.optString(3)
-                )
-            } else {
-                listOf(
-                    q.optString("optionA", ""),
-                    q.optString("optionB", ""),
-                    q.optString("optionC", ""),
-                    q.optString("optionD", "")
-                )
-            }
-        }
+            gradeObj.keys().forEach { fieldKey ->
+                val questionsArr = gradeObj.optJSONArray(fieldKey) ?: return@forEach
 
-        fun process(gradeId: String, prefix: String, obj: JSONObject) {
+                // FIX 3: fieldId exact dataset key se match karo (case-sensitive: SE, ITC)
+                val fieldId = "${gradeKey}_${fieldKey}"
 
-            obj.keys().forEach { subject ->
+                for (i in 0 until questionsArr.length()) {
+                    val q = questionsArr.optJSONObject(i) ?: continue
 
-                val arr = obj.optJSONArray(subject) ?: return@forEach
+                    val question = q.optString("question", "").trim()
+                    if (question.isEmpty()) continue
 
-                for (i in 0 until arr.length()) {
+                    // FIX 4: Dataset mein options [{text, isCorrect}] format mein hain
+                    //         "answer" field nahi hai — isCorrect flag se correct nikalo
+                    val optionsArr: JSONArray = q.optJSONArray("options") ?: continue
+                    val parsedOptions = mutableListOf<Map<String, Any>>()
 
-                    val q = arr.optJSONObject(i) ?: continue
+                    for (j in 0 until optionsArr.length()) {
+                        val opt = optionsArr.optJSONObject(j) ?: continue
+                        parsedOptions.add(
+                            mapOf(
+                                "text"      to opt.optString("text", ""),
+                                "isCorrect" to opt.optBoolean("isCorrect", false)
+                            )
+                        )
+                    }
 
-                    val question = q.optString("question")
-
-                    val options = safeOptions(q)
-
-                    if (question.isBlank()) continue
-
-                    val correct = q.optString("answer", "a").lowercase()
+                    if (parsedOptions.isEmpty()) continue
 
                     all.add(
                         mapOf(
-                            "gradeId" to gradeId,
-                            "fieldId" to "${prefix}_${subject.lowercase()}",
                             "question" to question,
-                            "optionA" to options[0],
-                            "optionB" to options[1],
-                            "optionC" to options[2],
-                            "optionD" to options[3],
-                            "correct" to correct
+                            "fieldId"  to fieldId,
+                            "options"  to parsedOptions   // proper maps, not strings
                         )
                     )
                 }
             }
         }
 
-        root.optJSONObject("matric")?.let {
-            process("matric", "matric", it)
+        Log.d(TAG, "Total questions parsed: ${all.size}")
+
+        if (all.isEmpty()) {
+            Log.e(TAG, "No questions found — check asset file name and format")
+            onDone(false)
+            return
         }
-
-        root.optJSONObject("intermediate")?.let {
-            process("intermediate", "intermediate", it)
-        }
-
-        val bachKey = listOf("bachelors", "Bachelors", "undergraduate")
-            .firstOrNull { root.has(it) }
-
-        if (bachKey != null) {
-            root.optJSONObject(bachKey)?.let {
-                process("undergraduate", "undergraduate", it)
-            }
-        }
-
-        Log.d(TAG, "Total questions: ${all.size}")
 
         uploadChunks(all, 0, onDone)
     }
+
+    // ── CHUNKED UPLOAD ────────────────────────────────────────────────────────
 
     private fun uploadChunks(
         list: List<Map<String, Any>>,
         start: Int,
         onDone: (Boolean) -> Unit
     ) {
-
         if (start >= list.size) {
+            Log.d(TAG, "All ${list.size} questions uploaded successfully")
             onDone(true)
             return
         }
 
-        val end = minOf(start + 500, list.size)
+        val end   = minOf(start + 499, list.size)   // 499 safe limit (Firestore max = 500)
         val batch = db.batch()
 
         for (i in start until end) {
@@ -222,10 +179,11 @@ class DataUploader(private val context: Context) {
 
         batch.commit()
             .addOnSuccessListener {
+                Log.d(TAG, "Chunk uploaded: $start → $end")
                 uploadChunks(list, end, onDone)
             }
             .addOnFailureListener {
-                Log.e(TAG, "Chunk failed: ${it.message}")
+                Log.e(TAG, "Chunk failed ($start→$end): ${it.message}")
                 onDone(false)
             }
     }

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- APPROACH A: 4 fixed RadioButtons — Kotlin sirf .text set karta hai -->
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,7 +17,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Question Text -->
         <TextView
             android:id="@+id/tvQuestion"
             android:layout_width="match_parent"
@@ -27,7 +27,6 @@
             android:lineSpacingExtra="3dp"
             android:layout_marginBottom="12dp"/>
 
-        <!-- Option A -->
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"

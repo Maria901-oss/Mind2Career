@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             // User already logged in — seedha home
-            startActivity(Intent(this, home_activity::class.java))
+            startActivity(Intent(this, onboarding4::class.java))
             finish()
             return
         }
