@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_DOCUMENTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -19,7 +20,12 @@
         android:roundIcon="@drawable/ic_launcher_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mind2Career">
-
+        <activity
+            android:name=".transitionScreen"
+            android:exported="false" />
+        <activity
+            android:name=".softwareEngineering"
+            android:exported="false" />
         <activity
             android:name=".DesignActivity"
             android:exported="false" />
@@ -34,10 +40,6 @@
             android:exported="false" />
         <activity
             android:name=".Digital"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
-            android:name=".Softwareengineering"
             android:exported="false" />
         <activity
             android:name=".ForgotPasswordActivity"
@@ -56,9 +58,6 @@
             android:exported="false" />
         <activity
             android:name=".ProfileScreen"
-            android:exported="false" />
-        <activity
-            android:name=".TransitionScreen"
             android:exported="false" />
         <activity
             android:name=".SkillGapScreen"
@@ -101,10 +100,10 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

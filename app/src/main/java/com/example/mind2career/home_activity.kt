@@ -83,12 +83,12 @@ class home_activity : AppCompatActivity() {
                 }
 
                 R.id.nav_transition -> {
-                    startActivity(Intent(this, TransitionScreen::class.java))
+                    startActivity(Intent(this, transitionScreen::class.java))
                     true
                 }
 
                 R.id.nav_profile -> {
-                    startActivity(Intent(this, ProfileScreen::class.java))
+                    startActivity(Intent(this, profile::class.java))
                     true
                 }
 

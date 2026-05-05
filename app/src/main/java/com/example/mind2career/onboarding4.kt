@@ -25,9 +25,14 @@ class onboarding4 : AppCompatActivity() {
         }
 
         btnSignUp = findViewById(R.id.btnSignUp)
+        btnSignIn = findViewById(R.id.btnSignIn)
 
         btnSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+        btnSignIn.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }

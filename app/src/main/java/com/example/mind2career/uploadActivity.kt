@@ -3,6 +3,7 @@ package com.example.mind2career
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.*
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 /**
@@ -23,7 +24,7 @@ class UploadActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        enableEdgeToEdge()
         // Simple UI — no XML needed
         val layout = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL

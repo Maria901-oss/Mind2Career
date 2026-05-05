@@ -3,15 +3,17 @@ package com.example.mind2career
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 
-class MainActivity : AppCompatActivity() {
+class transitionScreen : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_transition_screen)
 
         val cardSoftwareEngineering = findViewById<CardView>(R.id.cardSoftwareEngineering)
         val cardDigitalMarketing = findViewById<CardView>(R.id.cardDigitalMarketing)
@@ -21,11 +23,12 @@ class MainActivity : AppCompatActivity() {
         val cardDesign = findViewById<CardView>(R.id.cardDesign)
 
         cardSoftwareEngineering.setOnClickListener {
-            startActivity(Intent(this, SoftwareActivity::class.java))
+            val intent=Intent(this, softwareEngineering::class.java)
+            startActivity(intent)
         }
 
         cardDigitalMarketing.setOnClickListener {
-            startActivity(Intent(this, digitalmarketing::class.java))
+            startActivity(Intent(this, Digital::class.java))
         }
 
         cardDataScientist.setOnClickListener {

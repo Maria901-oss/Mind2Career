@@ -5,13 +5,15 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
-class SoftwareActivity : AppCompatActivity() {
+class softwareEngineering : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_softwareengineering)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_software_engineering)
 
         // Back button
         findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
