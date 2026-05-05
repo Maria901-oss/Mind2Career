@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F3FF"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,55 +62,53 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- BANNER -->
-            <LinearLayout
+            <!-- ✅ NEW BANNER CARD - Purple solid, same as Software Engineering -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/herocard"
-                android:orientation="horizontal"
-                android:padding="20dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
 
                 <LinearLayout
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/heroicon"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="T"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        android:textColor="#FFFFFF"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="14dp"
-                    android:orientation="vertical">
+                    android:background="#7C6FCD"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Teacher"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        android:textColor="#FFFFFF"/>
+                        android:text="🎓"
+                        android:textSize="38sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Shape the next generation"
-                        android:textSize="12sp"
-                        android:textColor="#D5CCFF"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teacher"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Shape the next generation"
+                            android:textSize="12sp"
+                            android:textColor="#D5CCFF"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- OVERVIEW -->
             <androidx.cardview.widget.CardView

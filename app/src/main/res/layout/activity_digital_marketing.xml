@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- FILE: res/layout/activity_digital_marketing.xml -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8FF">
+    android:background="#F5F3FF"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,9 +18,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#6C5CE7"
+            android:background="#F5F3FF"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            android:fitsSystemWindows="true">
 
             <!-- Back Button Row -->
             <LinearLayout
@@ -46,57 +53,66 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Career Path"
-                        android:textColor="#CCFFFFFF"
+                        android:textColor="#9B8EC4"
                         android:textSize="11sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Digital Marketing"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#2D2060"
                         android:textSize="16sp"
                         android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
 
             <!-- Icon + Title Card -->
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#7D6FF0"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@android:drawable/ic_dialog_email"
-                    android:background="@android:color/white"
-                    android:contentDescription="Digital Marketing Icon"/>
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginStart="12dp">
+                    android:background="#7C6FCD"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Digital Marketing"
-                        android:textColor="#FFFFFF"
-                        android:textSize="18sp"
-                        android:textStyle="bold"/>
+                        android:text="💻"
+                        android:textSize="38sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Grow brands in the digital world"
-                        android:textColor="#DDFFFFFF"
-                        android:textSize="12sp"/>
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Digital Marketing"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Grow barnds in digital world"
+                            android:textSize="12sp"
+                            android:textColor="#D5CCFF"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
         <!-- BODY CONTENT -->
@@ -106,356 +122,436 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Overview Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Overview"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#1A1A2E"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
+            <!-- Overview Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Digital Marketers promote products and brands online using SEO, social media, paid ads, and content marketing. It is one of the fastest-growing fields globally, offering remote work and strong growth potential."
-                android:textSize="13sp"
-                android:textColor="#555555"
-                android:lineSpacingMultiplier="1.5"
-                android:layout_marginBottom="20dp"/>
-
-            <!-- Key Skills Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Key Skills"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#1A1A2E"
-                android:layout_marginBottom="10dp"/>
-
-            <!-- Skills Row 1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SEO / SEM"
-                    android:background="@drawable/skill_chip"
-                    android:textColor="#6C5CE7"
-                    android:textSize="12sp"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="6dp"
-                    android:layout_marginEnd="8dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Google Ads"
-                    android:background="@drawable/skill_chip"
-                    android:textColor="#6C5CE7"
-                    android:textSize="12sp"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="6dp"
-                    android:layout_marginEnd="8dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Analytics"
-                    android:background="@drawable/skill_chip"
-                    android:textColor="#6C5CE7"
-                    android:textSize="12sp"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="6dp"/>
-            </LinearLayout>
-
-            <!-- Skills Row 2 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Social Media"
-                    android:background="@drawable/skill_chip"
-                    android:textColor="#6C5CE7"
-                    android:textSize="12sp"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="6dp"
-                    android:layout_marginEnd="8dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Content Writing"
-                    android:background="@drawable/skill_chip"
-                    android:textColor="#6C5CE7"
-                    android:textSize="12sp"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="6dp"/>
-            </LinearLayout>
-
-            <!-- Career Outlook Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Career Outlook"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#1A1A2E"
-                android:layout_marginBottom="10dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="20dp">
-
-                <!-- Salary Card -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:background="@drawable/cardwhite"
-                    android:padding="16dp"
-                    android:layout_marginEnd="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$75K+"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="#6C5CE7"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Avg. Salary (US)"
-                        android:textSize="11sp"
-                        android:textColor="#888888"/>
-                </LinearLayout>
-
-                <!-- Growth Card -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:background="@drawable/cardwhite"
-                    android:padding="16dp"
-                    android:layout_marginStart="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="19%"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="#6C5CE7"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Job Growth (1yr)"
-                        android:textSize="11sp"
-                        android:textColor="#888888"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Recommended Courses Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recommended Courses"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#1A1A2E"
-                android:layout_marginBottom="10dp"/>
-
-            <!-- Course 1: Google Skillshop -->
-            <LinearLayout
-                android:id="@+id/courseGoogle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cardwhite"
-                android:orientation="horizontal"
-                android:padding="14dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="10dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <TextView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:text="G"
-                    android:gravity="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:background="@drawable/courseicon"/>
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="#FFFFFF"
                     android:orientation="vertical"
-                    android:layout_marginStart="12dp">
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Google Skillshop"
+                        android:text="Overview"
                         android:textSize="13sp"
                         android:textStyle="bold"
-                        android:textColor="#1A1A2E"/>
+                        android:textColor="#2D2060"
+                        android:layout_marginBottom="8dp"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Free Google Ads Certification"
-                        android:textSize="11sp"
-                        android:textColor="#888888"/>
+                        android:text="Digital Marketers promote products and brands online using SEO, social media, paid ads, and content marketing. It is one of the fastest-growing fields globally, offering remote work and strong growth potential."
+                        android:textSize="13sp"
+                        android:textColor="#5F5A7A"
+                        android:lineSpacingMultiplier="1.6"/>
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="→"
-                    android:textSize="18sp"
-                    android:textColor="#6C5CE7"/>
-            </LinearLayout>
-
-            <!-- Course 2: Coursera -->
-            <LinearLayout
-                android:id="@+id/courseCoursera"
+            <!-- Key Skills Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/cardwhite"
-                android:orientation="horizontal"
-                android:padding="14dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="10dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <TextView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:text="C"
-                    android:gravity="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:background="@drawable/courseicon"/>
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="#FFFFFF"
                     android:orientation="vertical"
-                    android:layout_marginStart="12dp">
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Coursera"
+                        android:text="Key Skills"
                         android:textSize="13sp"
                         android:textStyle="bold"
-                        android:textColor="#1A1A2E"/>
+                        android:textColor="#2D2060"
+                        android:layout_marginBottom="10dp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <!-- Skills Row 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Digital Marketing Specialization"
-                        android:textSize="11sp"
-                        android:textColor="#888888"/>
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SEO / SEM"
+                            android:background="@drawable/skill_chip"
+                            android:textColor="#534AB7"
+                            android:textSize="11sp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:layout_marginEnd="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Google Ads"
+                            android:background="@drawable/skill_chip"
+                            android:textColor="#534AB7"
+                            android:textSize="11sp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:layout_marginEnd="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Analytics"
+                            android:background="@drawable/skill_chip"
+                            android:textColor="#534AB7"
+                            android:textSize="11sp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"/>
+                    </LinearLayout>
+
+                    <!-- Skills Row 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Social Media"
+                            android:background="@drawable/skill_chip"
+                            android:textColor="#534AB7"
+                            android:textSize="11sp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:layout_marginEnd="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Content Writing"
+                            android:background="@drawable/skill_chip"
+                            android:textColor="#534AB7"
+                            android:textSize="11sp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"/>
+                    </LinearLayout>
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="→"
-                    android:textSize="18sp"
-                    android:textColor="#6C5CE7"/>
-            </LinearLayout>
-
-            <!-- Course 3: HubSpot Academy -->
-            <LinearLayout
-                android:id="@+id/courseHubspot"
+            <!-- Career Outlook Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/cardwhite"
-                android:orientation="horizontal"
-                android:padding="14dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="24dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <TextView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:text="H"
-                    android:gravity="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:background="@drawable/courseicon"/>
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="#FFFFFF"
                     android:orientation="vertical"
-                    android:layout_marginStart="12dp">
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="HubSpot Academy"
+                        android:text="Career Outlook"
                         android:textSize="13sp"
                         android:textStyle="bold"
-                        android:textColor="#1A1A2E"/>
+                        android:textColor="#2D2060"
+                        android:layout_marginBottom="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!-- Salary -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/statecard"
+                            android:orientation="vertical"
+                            android:padding="12dp"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$75K+"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="#534AB7"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Avg. Salary (US)"
+                                android:textSize="10sp"
+                                android:textColor="#9B8EC4"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+
+                        <!-- Growth -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/statecard"
+                            android:orientation="vertical"
+                            android:padding="12dp"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="19%"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="#534AB7"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Job Growth (1yr)"
+                                android:textSize="10sp"
+                                android:textColor="#9B8EC4"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Recommended Courses Card -->
+            <androidx.cardview.widget.CardView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Inbound Marketing Free Course"
-                        android:textSize="11sp"
-                        android:textColor="#888888"/>
-                </LinearLayout>
+                        android:text="Recommended Courses"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="#2D2060"
+                        android:layout_marginBottom="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="→"
-                    android:textSize="18sp"
-                    android:textColor="#6C5CE7"/>
-            </LinearLayout>
+                    <!-- Course 1: Google Skillshop -->
+                    <LinearLayout
+                        android:id="@+id/courseGoogle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/courseitem"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="G"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/courseicon"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Google Skillshop"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="#2D2060"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Free Google Ads Certification"
+                                android:textSize="10sp"
+                                android:textColor="#9B8EC4"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="→"
+                            android:textSize="14sp"
+                            android:textColor="#7C6FCD"/>
+                    </LinearLayout>
+
+                    <!-- Course 2: Coursera -->
+                    <LinearLayout
+                        android:id="@+id/courseCoursera"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/courseitem"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="C"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/courseicon"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Coursera"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="#2D2060"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Digital Marketing Specialization"
+                                android:textSize="10sp"
+                                android:textColor="#9B8EC4"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="→"
+                            android:textSize="14sp"
+                            android:textColor="#7C6FCD"/>
+                    </LinearLayout>
+
+                    <!-- Course 3: HubSpot Academy -->
+                    <LinearLayout
+                        android:id="@+id/courseHubspot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/courseitem"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:gravity="center_vertical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="H"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/courseicon"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="HubSpot Academy"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="#2D2060"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Inbound Marketing Free Course"
+                                android:textSize="10sp"
+                                android:textColor="#9B8EC4"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="→"
+                            android:textSize="14sp"
+                            android:textColor="#7C6FCD"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </LinearLayout>
