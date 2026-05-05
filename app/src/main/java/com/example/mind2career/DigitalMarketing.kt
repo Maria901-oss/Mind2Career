@@ -8,12 +8,12 @@ import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
-class digitalmarketing : AppCompatActivity() {
+class DigitalMarketing : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_digital)
+        setContentView(R.layout.activity_digital_marketing)
 
         // Back button
         findViewById<ImageButton>(R.id.btnBack).setOnClickListener {

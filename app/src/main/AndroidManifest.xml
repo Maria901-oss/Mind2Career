@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mind2Career">
         <activity
+            android:name=".DigitalMarketing"
+            android:exported="false" />
+        <activity
             android:name=".transitionScreen"
             android:exported="false" />
         <activity
@@ -37,9 +40,6 @@
             android:exported="false" />
         <activity
             android:name=".DataScientist"
-            android:exported="false" />
-        <activity
-            android:name=".Digital"
             android:exported="false" />
         <activity
             android:name=".ForgotPasswordActivity"

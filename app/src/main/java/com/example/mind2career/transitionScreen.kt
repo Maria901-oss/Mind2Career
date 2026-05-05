@@ -28,7 +28,7 @@ class transitionScreen : AppCompatActivity() {
         }
 
         cardDigitalMarketing.setOnClickListener {
-            startActivity(Intent(this, Digital::class.java))
+            startActivity(Intent(this, DigitalMarketing::class.java))
         }
 
         cardDataScientist.setOnClickListener {
