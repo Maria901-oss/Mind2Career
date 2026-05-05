@@ -176,8 +176,11 @@
                 android:text="Sign in"
                 android:textColor="@color/emailname"
                 android:textStyle="bold"/>
-        </LinearLayout>
 
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
     </LinearLayout>
 
 </ScrollView>

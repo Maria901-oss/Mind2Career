@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class transitionScreen : AppCompatActivity() {
 
@@ -45,6 +46,32 @@ class transitionScreen : AppCompatActivity() {
 
         cardDesign.setOnClickListener {
             startActivity(Intent(this, DesignActivity::class.java))
+        }
+        // Bottom Navigation
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+
+// Transition screen hai toh transition item selected dikhao
+        bottomNav.selectedItemId = R.id.nav_transition
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, home_activity::class.java))
+                    true
+                }
+                R.id.nav_ranking -> {
+                    startActivity(Intent(this, RankingScreen::class.java))
+                    true
+                }
+                R.id.nav_transition -> {
+                    true // Already here
+                }
+                R.id.nav_profile -> {
+                    startActivity(Intent(this, profile::class.java))
+                    true
+                }
+                else -> false
+            }
         }
     }
 }

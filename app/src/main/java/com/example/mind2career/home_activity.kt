@@ -68,7 +68,8 @@ class home_activity : AppCompatActivity() {
 
         // Bottom Navigation
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
-
+// Home par aate hi home item selected dikhao
+        bottomNav.selectedItemId = R.id.nav_home
         bottomNav.setOnItemSelectedListener {item ->
 
             when (item.itemId) {
