@@ -1,18 +1,21 @@
 package com.example.mind2career
 
+import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.io.File
 
-class profile : AppCompatActivity() {
+class Profile : AppCompatActivity() {
 
     private lateinit var profileImage: ImageView
 
@@ -22,14 +25,23 @@ class profile : AppCompatActivity() {
         }
 
     private var cameraUri: Uri? = null
+
     private val cameraLauncher =
         registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
-            if (success) cameraUri?.let { profileImage.setImageURI(it) }
+            if (success && cameraUri != null) {
+                profileImage.setImageURI(cameraUri)
+            } else {
+                Toast.makeText(this, "Camera failed", Toast.LENGTH_SHORT).show()
+            }
         }
 
     private val cameraPermission =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-            if (granted) openCamera()
+            if (granted) {
+                openCamera()
+            } else {
+                Toast.makeText(this, "Camera permission denied", Toast.LENGTH_SHORT).show()
+            }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,20 +50,21 @@ class profile : AppCompatActivity() {
         setContentView(R.layout.activity_profile_screen)
 
         profileImage = findViewById(R.id.profileImage)
+
         profileImage.setOnClickListener {
             showImagePickerDialog()
         }
 
         findViewById<LinearLayout>(R.id.layoutPersonalInfo).setOnClickListener {
-            android.widget.Toast.makeText(this, "Personal Information", android.widget.Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Personal Information", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<LinearLayout>(R.id.layoutSupport).setOnClickListener {
-            android.widget.Toast.makeText(this, "Support", android.widget.Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Support", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<LinearLayout>(R.id.layoutLoginSecurity).setOnClickListener {
-            android.widget.Toast.makeText(this, "Login & Security", android.widget.Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Login & Security", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<LinearLayout>(R.id.layoutPrivacyPolicy).setOnClickListener {
@@ -65,15 +78,47 @@ class profile : AppCompatActivity() {
         findViewById<LinearLayout>(R.id.layoutLogout).setOnClickListener {
             showLogoutDialog()
         }
+
+        // BOTTOM NAV FIX
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+
+        bottomNav.selectedItemId = R.id.nav_profile
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+
+                R.id.nav_home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    true
+                }
+
+                R.id.nav_ranking -> {
+                    startActivity(Intent(this, RankingScreen::class.java))
+                    true
+                }
+
+                R.id.nav_transition -> {
+                    startActivity(Intent(this, transitionScreen::class.java))
+                    true
+                }
+
+                R.id.nav_profile -> {
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     private fun showImagePickerDialog() {
-        val options = arrayOf("Camera se photo lo", "Gallery se choose karo", "Cancel")
+        val options = arrayOf("Camera", "Gallery", "Cancel")
+
         AlertDialog.Builder(this)
             .setTitle("Profile Picture")
             .setItems(options) { dialog, which ->
                 when (which) {
-                    0 -> cameraPermission.launch(android.Manifest.permission.CAMERA)
+                    0 -> cameraPermission.launch(Manifest.permission.CAMERA)
                     1 -> galleryLauncher.launch("image/*")
                     2 -> dialog.dismiss()
                 }
@@ -83,25 +128,28 @@ class profile : AppCompatActivity() {
 
     private fun openCamera() {
         val imageFile = File(cacheDir, "profile_${System.currentTimeMillis()}.jpg")
+
         cameraUri = FileProvider.getUriForFile(
             this,
-            "${packageName}.provider",
+            "${applicationContext.packageName}.provider",
             imageFile
         )
+
         cameraLauncher.launch(cameraUri!!)
     }
 
     private fun showLogoutDialog() {
         AlertDialog.Builder(this)
             .setTitle("Log Out")
-            .setMessage("Kya aap waqai log out karna chahte hain?")
-            .setPositiveButton("Haan") { _, _ ->
+            .setMessage("Are you sure you want to log out?")
+            .setPositiveButton("Yes") { _, _ ->
                 val intent = Intent(this, MainActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                intent.flags =
+                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 finish()
             }
-            .setNegativeButton("Nahi", null)
+            .setNegativeButton("No", null)
             .show()
     }
 

@@ -67,7 +67,7 @@ class transitionScreen : AppCompatActivity() {
                     true // Already here
                 }
                 R.id.nav_profile -> {
-                    startActivity(Intent(this, profile::class.java))
+                    startActivity(Intent(this, Profile::class.java))
                     true
                 }
                 else -> false

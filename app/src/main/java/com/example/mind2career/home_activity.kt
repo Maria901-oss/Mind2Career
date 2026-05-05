@@ -89,7 +89,7 @@ class home_activity : AppCompatActivity() {
                 }
 
                 R.id.nav_profile -> {
-                    startActivity(Intent(this, profile::class.java))
+                    startActivity(Intent(this, Profile::class.java))
                     true
                 }
 

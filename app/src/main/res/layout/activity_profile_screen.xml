@@ -259,8 +259,8 @@
         android:layout_alignParentBottom="true"
         android:background="@android:color/white"
         app:menu="@menu/bottom_nav"
-        app:itemIconTint="#7B1FA2"
-        app:itemTextColor="#7B1FA2"
+        app:itemIconTint="@color/nav_color"
+        app:itemTextColor="@color/nav_color"
         app:labelVisibilityMode="labeled"/>
 
 </RelativeLayout>

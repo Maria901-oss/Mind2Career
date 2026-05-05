@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.READ_MEDIA_DOCUMENTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -20,6 +19,16 @@
         android:roundIcon="@drawable/ic_launcher_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mind2Career">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
         <activity
             android:name=".DigitalMarketing"
             android:exported="false" />
@@ -57,7 +66,7 @@
             android:name=".RankingScreen"
             android:exported="false" />
         <activity
-            android:name=".ProfileScreen"
+            android:name=".Profile"
             android:exported="false" />
         <activity
             android:name=".SkillGapScreen"
