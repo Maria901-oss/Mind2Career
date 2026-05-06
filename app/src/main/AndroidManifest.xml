@@ -21,6 +21,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mind2Career">
         <activity
+            android:name=".journeyStartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dialog_rate"
+            android:exported="false" />
+        <activity
             android:name=".ranking"
             android:exported="false" />
         <activity

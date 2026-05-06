@@ -92,7 +92,6 @@ class RecommendationScreen : AppCompatActivity() {
         llWeakSubjects        = findViewById(R.id.llWeakSubjects)
 
         btnStartJourney       = findViewById(R.id.btnStartJourney)
-        btnSavePdf            = findViewById(R.id.btnSavePdf)
     }
 
     private fun setupListeners() {
@@ -112,9 +111,6 @@ class RecommendationScreen : AppCompatActivity() {
             // TODO: navigate to next screen
         }
 
-        btnSavePdf.setOnClickListener {
-            Toast.makeText(this, "PDF export coming soon!", Toast.LENGTH_SHORT).show()
-        }
     }
 
     // ── Firebase fetch ────────────────────────────────────────────────────────

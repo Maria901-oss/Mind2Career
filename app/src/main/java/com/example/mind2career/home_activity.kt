@@ -61,9 +61,29 @@ class home_activity : AppCompatActivity() {
 
         // RATE US → Play Store
         cardRate.setOnClickListener {
-            val uri = Uri.parse("market://details?id=$packageName")
-            val intent = Intent(Intent.ACTION_VIEW, uri)
-            startActivity(intent)
+
+            val dialogView = layoutInflater.inflate(R.layout.dialog_rate, null)
+
+            val ratingBar = dialogView.findViewById<android.widget.RatingBar>(R.id.ratingBar)
+            val btnSubmit = dialogView.findViewById<android.widget.Button>(R.id.btnSubmitRating)
+
+            val dialog = androidx.appcompat.app.AlertDialog.Builder(this)
+                .setView(dialogView)
+                .setCancelable(true)
+                .create()
+
+            btnSubmit.setOnClickListener {
+                val rating = ratingBar.rating
+
+                if (rating == 0f) {
+                    Toast.makeText(this, "Please select rating", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Thanks for rating: $rating ⭐", Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                }
+            }
+
+            dialog.show()
         }
 
         // Bottom Navigation
@@ -75,21 +95,28 @@ class home_activity : AppCompatActivity() {
             when (item.itemId) {
 
                 R.id.nav_home -> {
+                    if (this !is home_activity) {
+                        startActivity(Intent(this, home_activity::class.java))
+                        finish()
+                    }
                     true
                 }
 
                 R.id.nav_ranking -> {
                     startActivity(Intent(this, RankingScreen::class.java))
+                    finish()
                     true
                 }
 
                 R.id.nav_transition -> {
                     startActivity(Intent(this, transitionScreen::class.java))
+                    finish()
                     true
                 }
 
                 R.id.nav_profile -> {
                     startActivity(Intent(this, Profile::class.java))
+                    finish()
                     true
                 }
 

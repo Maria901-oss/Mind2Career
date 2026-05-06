@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:id="@+id/main"
     android:layout_height="match_parent"
     android:background="#F0F4FA">
 
@@ -41,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Try Again"
-            android:backgroundTint="#1565C0"
+            android:backgroundTint="@color/button"
             android:paddingStart="32dp"
             android:paddingEnd="32dp" />
     </LinearLayout>
@@ -69,7 +70,7 @@
                 android:gravity="center_vertical"
                 android:paddingStart="12dp"
                 android:paddingEnd="16dp"
-                android:background="#FFFFFF">
+                android:background="@color/secondarytext">
 
                 <ImageButton
                     android:id="@+id/btnBack"
@@ -86,7 +87,7 @@
                     android:layout_marginStart="10dp"
                     android:text="Mind2Career Recommendations"
                     android:textSize="15sp"
-                    android:textColor="#1A1A2E"
+                    android:textColor="@color/primary"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -135,7 +136,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="PERSONALITY TYPE"
                                 android:textSize="10sp"
-                                android:textColor="#1565C0"
+                                android:textColor="@color/button"
                                 android:letterSpacing="0.08"
                                 android:layout_marginBottom="4dp" />
 
@@ -145,7 +146,7 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
-                                android:textColor="#1A1A2E"
+                                android:textColor="@color/primary"
                                 android:text="—" />
                         </LinearLayout>
 
@@ -155,7 +156,7 @@
                             android:layout_height="62dp"
                             android:orientation="vertical"
                             android:gravity="center"
-                            android:background="@drawable/badge_blue_circle">
+                            android:background="@drawable/circle_bg_blue">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -171,7 +172,7 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
-                                android:textColor="#FFFFFF"
+                                android:textColor="@color/secondarytext"
                                 android:text="0%" />
                         </LinearLayout>
                     </LinearLayout>
@@ -185,7 +186,6 @@
                         android:textColor="#888888"
                         android:layout_marginBottom="6dp" />
 
-                    <!-- Skills chips horizontal scroll -->
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -230,7 +230,7 @@
                             android:layout_height="wrap_content"
                             android:text="DETAILS ▾"
                             android:textSize="11sp"
-                            android:textColor="#1565C0"
+                            android:textColor="@color/button"
                             android:textStyle="bold"
                             android:letterSpacing="0.04"
                             android:paddingStart="8dp" />
@@ -260,7 +260,7 @@
                 android:text="Your Professional Journey"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="#1A1A2E"
+                android:textColor="@color/primary"
                 android:gravity="center"
                 android:layout_marginTop="8dp" />
 
@@ -330,7 +330,7 @@
                             android:layout_height="wrap_content"
                             android:text="SUGGESTED FIELD"
                             android:textSize="10sp"
-                            android:textColor="#1565C0"
+                            android:textColor="@color/button"
                             android:letterSpacing="0.08"
                             android:layout_marginBottom="4dp" />
 
@@ -403,7 +403,7 @@
                             android:layout_height="wrap_content"
                             android:text="SKILLS TO LEARN"
                             android:textSize="10sp"
-                            android:textColor="#1565C0"
+                            android:textColor="@color/button"
                             android:letterSpacing="0.08"
                             android:layout_marginBottom="4dp" />
 
@@ -412,7 +412,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:textColor="#1A1A2E"
+                            android:textColor="@color/primary"
                             android:layout_marginBottom="10dp"
                             android:text="Core Technical Skills" />
 
@@ -488,7 +488,7 @@
                         android:layout_width="44dp"
                         android:layout_height="44dp"
                         android:src="@drawable/ic_book"
-                        android:background="@drawable/circle_bg_green"
+                        android:background="@drawable/circle_bg_blue"
                         android:padding="10dp"
                         android:contentDescription="Courses icon" />
 
@@ -521,7 +521,7 @@
                             android:layout_height="wrap_content"
                             android:text="SUGGESTED COURSES"
                             android:textSize="10sp"
-                            android:textColor="#2E7D32"
+                            android:textColor="@color/button"
                             android:letterSpacing="0.08"
                             android:layout_marginBottom="4dp" />
 
@@ -619,7 +619,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
-                            android:textColor="#1565C0"
+                            android:textColor="@color/button"
                             android:textStyle="bold"
                             android:text="" />
                     </LinearLayout>
@@ -631,7 +631,7 @@
                     android:layout_width="44dp"
                     android:layout_height="44dp"
                     android:src="@drawable/ic_trending_up"
-                    android:background="@drawable/circle_bg_dark"
+                    android:background="@drawable/circle_bg_blue"
                     android:padding="10dp"
                     android:contentDescription="Growth icon" />
             </LinearLayout>
@@ -662,7 +662,7 @@
                         android:layout_height="wrap_content"
                         android:text="💪  STRONG SUBJECTS"
                         android:textSize="10sp"
-                        android:textColor="#33691E"
+                        android:textColor="@color/button"
                         android:letterSpacing="0.08"
                         android:layout_marginBottom="10dp" />
 
@@ -728,19 +728,9 @@
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:letterSpacing="0.04"
-                    android:backgroundTint="#1565C0"
+                    android:backgroundTint="@color/button"
                     android:layout_marginBottom="8dp" />
 
-                <Button
-                    android:id="@+id/btnSavePdf"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:text="SAVE AS PDF"
-                    android:textSize="13sp"
-                    android:textColor="#1565C0"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.04" />
             </LinearLayout>
 
         </LinearLayout>
