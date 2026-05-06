@@ -1,6 +1,7 @@
 package com.example.mind2career
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapShader
@@ -9,6 +10,7 @@ import android.graphics.Paint
 import android.graphics.Shader
 import android.net.Uri
 import android.os.Bundle
+import android.util.Base64
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -23,6 +25,7 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import java.io.ByteArrayOutputStream
 import java.io.File
 
 class Profile : AppCompatActivity() {
@@ -38,13 +41,13 @@ class Profile : AppCompatActivity() {
 
     private val galleryLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-            uri?.let { setCircularImage(it) }
+            uri?.let { setCircularImageAndSave(it) }
         }
 
     private val cameraLauncher =
         registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
-            if (success && cameraUri != null) setCircularImage(cameraUri!!)
-            else Toast.makeText(this, "Image did not set from Camera ", Toast.LENGTH_SHORT).show()
+            if (success && cameraUri != null) setCircularImageAndSave(cameraUri!!)
+            else Toast.makeText(this, "Image did not set from Camera", Toast.LENGTH_SHORT).show()
         }
 
     private val cameraPermission =
@@ -58,44 +61,37 @@ class Profile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_profile_screen)
+        setContentView(R.layout.activity_profile)
 
-        profileImage  = findViewById(R.id.profileImage)
-        tvUserName    = findViewById(R.id.tvUserName)
-        tvUserEmail   = findViewById(R.id.tvUserEmail)
+        profileImage = findViewById(R.id.profileImage)
+        tvUserName   = findViewById(R.id.tvUserName)
+        tvUserEmail  = findViewById(R.id.tvUserEmail)
 
-        // Firebase se real user info load karo
         loadUserInfo()
+        loadSavedProfileImage()
 
-        // Profile image click → camera/gallery dialog
         profileImage.setOnClickListener { showImagePickerDialog() }
 
-        // Personal Info → popup dialog (koi nai screen nahi)
         findViewById<LinearLayout>(R.id.layoutPersonalInfo).setOnClickListener {
             showPersonalInfoDialog()
         }
 
-        // Support → Email app khulega
         findViewById<LinearLayout>(R.id.layoutSupport).setOnClickListener {
             showSupportDialog()
         }
 
-        // Login & Security → Password reset email
-        findViewById<LinearLayout>(R.id.layoutLoginSecurity).setOnClickListener {
-            showLoginSecurityDialog()
-        }
 
-        // Privacy Policy → Browser
+
+        // ✅ Privacy Policy → PrivacyPolicyActivity
         findViewById<LinearLayout>(R.id.layoutPrivacyPolicy).setOnClickListener {
-            openUrl("https://yourapp.com/privacy-policy")
+            startActivity(Intent(this, PrivacyPolicyActivity::class.java))
         }
 
-        // Terms & Conditions → Browser
+        // ✅ Terms & Conditions → TermsConditionsActivity
         findViewById<LinearLayout>(R.id.layoutTermsConditions).setOnClickListener {
-            openUrl("https://yourapp.com/terms")
+            startActivity(Intent(this, TermsConditionsActivity::class.java))
         }
 
-        // Logout
         findViewById<LinearLayout>(R.id.layoutLogout).setOnClickListener {
             showLogoutDialog()
         }
@@ -109,10 +105,43 @@ class Profile : AppCompatActivity() {
         val user = auth.currentUser
         if (user != null) {
             tvUserName.text  = if (!user.displayName.isNullOrEmpty()) user.displayName else "User"
-            tvUserEmail.text = user.email ?: "Email did not found"
+            tvUserEmail.text = user.email ?: "Email not found"
         } else {
             tvUserName.text  = "User"
             tvUserEmail.text = "Logged out"
+        }
+    }
+
+    // ===================== SAVE / LOAD PROFILE IMAGE =====================
+
+    private fun saveProfileImageToPrefs(bitmap: Bitmap) {
+        try {
+            val stream = ByteArrayOutputStream()
+            val scaled = Bitmap.createScaledBitmap(bitmap, 300, 300, true)
+            scaled.compress(Bitmap.CompressFormat.JPEG, 80, stream)
+            val encoded = Base64.encodeToString(stream.toByteArray(), Base64.DEFAULT)
+            getSharedPreferences("ProfilePrefs", Context.MODE_PRIVATE)
+                .edit()
+                .putString("profile_image", encoded)
+                .apply()
+        } catch (e: Exception) {
+            Toast.makeText(this, "Image not saved", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun loadSavedProfileImage() {
+        try {
+            val encoded = getSharedPreferences("ProfilePrefs", Context.MODE_PRIVATE)
+                .getString("profile_image", null) ?: return
+            val bytes  = Base64.decode(encoded, Base64.DEFAULT)
+            val bitmap = android.graphics.BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                ?: return
+            val drawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
+            drawable.isCircular = true
+            profileImage.setImageDrawable(drawable)
+            profileImage.background = null
+        } catch (e: Exception) {
+            // no saved image — default rehne do
         }
     }
 
@@ -126,13 +155,11 @@ class Profile : AppCompatActivity() {
         val p = (20 * resources.displayMetrics.density).toInt()
         layout.setPadding(p, p, p, p)
 
-        // Name edit field
         val etName = EditText(this)
-        etName.hint = "write your Name"
+        etName.hint = "Write your Name"
         etName.setText(if (!user.displayName.isNullOrEmpty()) user.displayName else "")
         layout.addView(etName)
 
-        // Email — read only (Firebase mein change karna alag process hai)
         val etEmail = EditText(this)
         etEmail.hint = "Email"
         etEmail.setText(user.email ?: "")
@@ -150,14 +177,13 @@ class Profile : AppCompatActivity() {
                     return@setPositiveButton
                 }
                 val updates = UserProfileChangeRequest.Builder()
-                    .setDisplayName(newName)
-                    .build()
+                    .setDisplayName(newName).build()
                 user.updateProfile(updates).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         tvUserName.text = newName
-                        Toast.makeText(this, "User name updated ✅", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Name updated ✅", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(this, "Did not updated❌", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Update failed ❌", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -171,16 +197,15 @@ class Profile : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Support")
             .setMessage("Contact our support team for any query.")
-            .setPositiveButton("📧 Email Karen") { _, _ ->
+            .setPositiveButton("📧 Send Email") { _, _ ->
                 val intent = Intent(Intent.ACTION_SENDTO).apply {
-                    data = Uri.parse("mailto:")
-                    putExtra(Intent.EXTRA_EMAIL, arrayOf("support@yourapp.com"))
+                    data = Uri.parse("mailto:")  // ✅ fixed: "mail to:" → "mailto:"
+                    putExtra(Intent.EXTRA_EMAIL, arrayOf("support@mind2career.com"))
                     putExtra(Intent.EXTRA_SUBJECT, "App Support Request")
                 }
-                try {
-                    startActivity(intent)
-                } catch (e: Exception) {
-                    Toast.makeText(this, "Email app did not find", Toast.LENGTH_SHORT).show()
+                try { startActivity(intent) }
+                catch (e: Exception) {
+                    Toast.makeText(this, "Email app not found", Toast.LENGTH_SHORT).show()
                 }
             }
             .setNegativeButton("Cancel", null)
@@ -193,19 +218,14 @@ class Profile : AppCompatActivity() {
         val email = auth.currentUser?.email
         AlertDialog.Builder(this)
             .setTitle("Login & Security")
-            .setMessage("Send password on \"$email\" reset Email?")
-            .setPositiveButton("Reset Karein") { _, _ ->
+            .setMessage("Send password reset email to \"$email\"?")
+            .setPositiveButton("Reset") { _, _ ->
                 if (!email.isNullOrEmpty()) {
                     auth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            Toast.makeText(
-                                this,
-                                "Reset email has been sent ✅\nCheck your inbox",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        } else {
-                            Toast.makeText(this, "Email did not sent ❌", Toast.LENGTH_SHORT).show()
-                        }
+                        if (task.isSuccessful)
+                            Toast.makeText(this, "Reset email sent ✅", Toast.LENGTH_LONG).show()
+                        else
+                            Toast.makeText(this, "Email not sent ❌", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -218,7 +238,7 @@ class Profile : AppCompatActivity() {
     private fun showLogoutDialog() {
         AlertDialog.Builder(this)
             .setTitle("Log Out")
-            .setMessage("Did you really want to log out?")
+            .setMessage("Do you really want to log out?")
             .setPositiveButton("Yes") { _, _ ->
                 auth.signOut()
                 val intent = Intent(this, MainActivity::class.java)
@@ -226,7 +246,7 @@ class Profile : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-            .setNegativeButton("Not", null)
+            .setNegativeButton("No", null)
             .show()
     }
 
@@ -253,7 +273,7 @@ class Profile : AppCompatActivity() {
         cameraLauncher.launch(cameraUri!!)
     }
 
-    private fun setCircularImage(uri: Uri) {
+    private fun setCircularImageAndSave(uri: Uri) {
         try {
             val inputStream = contentResolver.openInputStream(uri)
             val bitmap = android.graphics.BitmapFactory.decodeStream(inputStream)
@@ -264,18 +284,21 @@ class Profile : AppCompatActivity() {
                 drawable.isCircular = true
                 profileImage.setImageDrawable(drawable)
                 profileImage.background = null
+                saveProfileImageToPrefs(circular)
             }
         } catch (e: Exception) {
-            Toast.makeText(this, "Image did not uploaded", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Image upload failed", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun getCircularBitmap(bitmap: Bitmap): Bitmap {
-        val size = minOf(bitmap.width, bitmap.height)
-        val squared = Bitmap.createBitmap(bitmap, (bitmap.width - size) / 2, (bitmap.height - size) / 2, size, size)
+        val size    = minOf(bitmap.width, bitmap.height)
+        val squared = Bitmap.createBitmap(
+            bitmap, (bitmap.width - size) / 2, (bitmap.height - size) / 2, size, size
+        )
         val output = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(output)
-        val paint = Paint().apply {
+        val paint  = Paint().apply {
             isAntiAlias = true
             shader = BitmapShader(squared, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
         }
@@ -306,13 +329,10 @@ class Profile : AppCompatActivity() {
         }
     }
 
-    // ===================== OPEN URL =====================
-
     private fun openUrl(url: String) {
-        try {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-        } catch (e: Exception) {
-            Toast.makeText(this, "Browser is not opening", Toast.LENGTH_SHORT).show()
+        try { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url))) }
+        catch (e: Exception) {
+            Toast.makeText(this, "Browser not opening", Toast.LENGTH_SHORT).show()
         }
     }
 }
