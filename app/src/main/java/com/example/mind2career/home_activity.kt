@@ -41,7 +41,7 @@ class home_activity : AppCompatActivity() {
 
         // SKILL GAP → Skill screen
         cardSkill.setOnClickListener {
-            startActivity(Intent(this, SkillGapScreen::class.java))
+            startActivity(Intent(this, HistoryActivity::class.java))
         }
 
         // CAREER PLAN
@@ -96,7 +96,9 @@ class home_activity : AppCompatActivity() {
 
                 R.id.nav_home -> {
                     if (this !is home_activity) {
-                        startActivity(Intent(this, home_activity::class.java))
+                        val intent = Intent(this, home_activity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                        startActivity(intent)
                         finish()
                     }
                     true

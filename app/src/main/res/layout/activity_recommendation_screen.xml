@@ -720,6 +720,7 @@
                 android:paddingEnd="16dp"
                 android:paddingBottom="32dp">
 
+                <!-- Primary: Start the Journey -->
                 <Button
                     android:id="@+id/btnStartJourney"
                     android:layout_width="match_parent"
@@ -729,8 +730,37 @@
                     android:textStyle="bold"
                     android:letterSpacing="0.04"
                     android:backgroundTint="@color/button"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="10dp" />
 
+                <!-- Secondary row: Go Home | History -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnGoHome"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="🏠  Go to Home"
+                        android:textSize="13sp"
+                        android:backgroundTint="#E8EAF6"
+                        android:textColor="@color/primary"
+                        android:layout_marginEnd="6dp" />
+
+                    <Button
+                        android:id="@+id/btnHistory"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="📋  View History"
+                        android:textSize="13sp"
+                        android:backgroundTint="#E8EAF6"
+                        android:textColor="@color/primary"
+                        android:layout_marginStart="6dp" />
+
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

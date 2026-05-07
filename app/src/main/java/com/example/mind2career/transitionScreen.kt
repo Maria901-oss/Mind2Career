@@ -56,11 +56,15 @@ class transitionScreen : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    startActivity(Intent(this, home_activity::class.java))
+                    val intent = Intent(this, home_activity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                    startActivity(intent)
+                    finish()
                     true
                 }
                 R.id.nav_ranking -> {
                     startActivity(Intent(this, RankingScreen::class.java))
+                    finish()
                     true
                 }
                 R.id.nav_transition -> {
@@ -68,6 +72,7 @@ class transitionScreen : AppCompatActivity() {
                 }
                 R.id.nav_profile -> {
                     startActivity(Intent(this, Profile::class.java))
+                    finish()
                     true
                 }
                 else -> false

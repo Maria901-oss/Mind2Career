@@ -1,17 +1,20 @@
 package com.example.mind2career
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
 
 class RecommendationScreen : AppCompatActivity() {
 
@@ -49,14 +52,23 @@ class RecommendationScreen : AppCompatActivity() {
     private lateinit var llWeakSubjects   : LinearLayout
 
     // ── CTA ───────────────────────────────────────────────────────────────────
-    private lateinit var btnStartJourney : Button
-    private lateinit var btnSavePdf      : Button
+    private lateinit var btnStartJourney  : Button
+    private lateinit var btnGoHome        : Button
+    private lateinit var btnHistory       : Button
 
     private var detailsExpanded = false
+
+    // Keep roadmap in memory so we can pass it to JourneyProgressActivity
+    private var currentRoadmap: CareerRoadmap? = null
+    private var currentPersonality: String = ""
+    private var currentGrade: String = ""
+    private var currentField: String = ""
+    private var currentPercentage: Int = 0
 
     // ─────────────────────────────────────────────────────────────────────────
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_recommendation_screen)
         bindViews()
         setupListeners()
@@ -92,6 +104,8 @@ class RecommendationScreen : AppCompatActivity() {
         llWeakSubjects        = findViewById(R.id.llWeakSubjects)
 
         btnStartJourney       = findViewById(R.id.btnStartJourney)
+        btnGoHome             = findViewById(R.id.btnGoHome)
+        btnHistory            = findViewById(R.id.btnHistory)
     }
 
     private fun setupListeners() {
@@ -107,10 +121,29 @@ class RecommendationScreen : AppCompatActivity() {
         }
 
         btnStartJourney.setOnClickListener {
-            Toast.makeText(this, "Your journey begins now! 🚀", Toast.LENGTH_SHORT).show()
-            // TODO: navigate to next screen
+            val roadmap = currentRoadmap ?: return@setOnClickListener
+            val intent = Intent(this, JourneyProgressActivity::class.java).apply {
+                putExtra("roadmapJson", Gson().toJson(roadmap))
+                putExtra("personality", currentPersonality)
+                putExtra("grade", currentGrade)
+                putExtra("field", currentField)
+                putExtra("percentage", currentPercentage)
+            }
+            startActivity(intent)
         }
 
+        btnGoHome.setOnClickListener {
+            // Go back to the root / home activity
+            val intent = Intent(this, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            }
+            startActivity(intent)
+            finish()
+        }
+
+        btnHistory.setOnClickListener {
+            startActivity(Intent(this, HistoryActivity::class.java))
+        }
     }
 
     // ── Firebase fetch ────────────────────────────────────────────────────────
@@ -147,11 +180,60 @@ class RecommendationScreen : AppCompatActivity() {
                     skills      = skills
                 )
 
+                // Store for navigation and history
+                currentRoadmap     = roadmap
+                currentPersonality = personality
+                currentGrade       = grade
+                currentField       = field
+                currentPercentage  = percentage
+
+                // Save this recommendation to Firestore history
+                saveToHistory(uid, roadmap, personality, grade, field, percentage, score, total, skills)
+
                 renderUI(roadmap, personality, grade, field, percentage, score, total, skills)
             }
             .addOnFailureListener { e ->
                 showError("Error: ${e.localizedMessage ?: "Unknown"}")
             }
+    }
+
+    // ── Save recommendation to history ────────────────────────────────────────
+    private fun saveToHistory(
+        uid: String,
+        roadmap: CareerRoadmap,
+        personality: String,
+        grade: String,
+        field: String,
+        percentage: Int,
+        score: Int,
+        total: Int,
+        skills: List<String>
+    ) {
+        val historyEntry = hashMapOf(
+            "timestamp"       to System.currentTimeMillis(),
+            "personality"     to personality,
+            "grade"           to grade,
+            "field"           to field,
+            "percentage"      to percentage,
+            "score"           to score,
+            "total"           to total,
+            "skills"          to skills,
+            "primaryCareer"   to roadmap.primaryCareer,
+            "whyThisCareer"   to roadmap.whyThisCareer,
+            "estimatedTimeline" to roadmap.estimatedTimeline,
+            "performanceLabel"  to roadmap.performanceLabel,
+            "recommendedCareers" to roadmap.recommendedCareers,
+            "skillsToLearn"   to roadmap.skillsToLearn,
+            "strongSubjects"  to roadmap.strongSubjects,
+            "weakSubjects"    to roadmap.weakSubjects,
+            "personalityInsight" to roadmap.personalityInsight,
+            "roadmapStepsJson" to Gson().toJson(roadmap.roadmapSteps)
+        )
+
+        db.collection("users").document(uid)
+            .collection("history")
+            .add(historyEntry)
+        // Silently ignore failures — history is non-critical
     }
 
     // ── Render full UI ────────────────────────────────────────────────────────
@@ -171,7 +253,7 @@ class RecommendationScreen : AppCompatActivity() {
         tvPersonalityInsight.text = roadmap.personalityInsight
         tvGradeField.text         = "🎓  $grade — $field   ($score/$total correct)"
 
-        // Skills chips
+        // Skills chips — NOW using @color/button (blue) color
         llSkillsHave.removeAllViews()
         skills.take(5).forEach { llSkillsHave.addView(makeSkillChip(it)) }
         if (skills.isEmpty()) llSkillsHave.addView(makeEmptyNote("No skills added yet"))
@@ -226,11 +308,12 @@ class RecommendationScreen : AppCompatActivity() {
 
     // ── View factories ────────────────────────────────────────────────────────
 
+    // Personality "Key Skills" chips — @color/button (blue) text
     private fun makeSkillChip(text: String): TextView = TextView(this).apply {
         this.text = text
         setPadding(24, 8, 24, 8)
         textSize = 12f
-        setTextColor(Color.parseColor("#1565C0"))
+        setTextColor(ContextCompat.getColor(context, R.color.button))
         background = ContextCompat.getDrawable(context, R.drawable.chip_bg_need)
         layoutParams = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -238,6 +321,7 @@ class RecommendationScreen : AppCompatActivity() {
         ).apply { setMargins(0, 0, 8, 0) }
     }
 
+    // "Skills to Learn" rows — @color/button (blue) text
     private fun makeSkillRow(skillName: String): LinearLayout = LinearLayout(this).apply {
         orientation = LinearLayout.HORIZONTAL
         setPadding(14, 10, 14, 10)
@@ -250,12 +334,12 @@ class RecommendationScreen : AppCompatActivity() {
         addView(TextView(context).apply {
             text = "✓  "
             textSize = 13f
-            setTextColor(Color.parseColor("#1565C0"))
+            setTextColor(ContextCompat.getColor(context, R.color.button))
         })
         addView(TextView(context).apply {
-            text = skillName   // ✅ ab bilkul clear hai
+            text = skillName
             textSize = 13f
-            setTextColor(Color.parseColor("#1565C0"))
+            setTextColor(ContextCompat.getColor(context, R.color.button))
         })
     }
 
@@ -323,7 +407,11 @@ class RoadmapStepsAdapter(
 
     override fun onBindViewHolder(h: StepVH, i: Int) {
         val s = steps[i]
+        // Step number — @color/button (blue) as per requirement
         h.tvNum.text   = "${s.stepNumber}"
+        h.tvNum.setTextColor(
+            ContextCompat.getColor(h.itemView.context, R.color.button)
+        )
         h.tvTitle.text = s.title
         h.tvDesc.text  = s.description
         h.tvDur.text   = s.duration

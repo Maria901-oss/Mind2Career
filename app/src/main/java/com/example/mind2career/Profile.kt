@@ -315,7 +315,11 @@ class Profile : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    startActivity(Intent(this, MainActivity::class.java)); finish(); true
+                    val intent = Intent(this, home_activity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                    startActivity(intent)
+                    finish()
+                    true
                 }
                 R.id.nav_ranking -> {
                     startActivity(Intent(this, RankingScreen::class.java)); finish(); true

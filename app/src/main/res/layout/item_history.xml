@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/historyCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Date row -->
+        <TextView
+            android:id="@+id/tvHistoryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="#AAAAAA"
+            android:letterSpacing="0.04"
+            android:layout_marginBottom="6dp"
+            android:text="01 Jan 2025  09:00 AM" />
+
+        <!-- Career title -->
+        <TextView
+            android:id="@+id/tvHistoryCareer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="4dp"
+            android:text="Software Engineering" />
+
+        <!-- Personality -->
+        <TextView
+            android:id="@+id/tvHistoryPersonality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#444444"
+            android:layout_marginBottom="3dp"
+            android:text="🧠 Executor" />
+
+        <!-- Grade + Field -->
+        <TextView
+            android:id="@+id/tvHistoryGradeField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="3dp"
+            android:text="🎓 Bachelors  •  Computer Science" />
+
+        <!-- Performance -->
+        <TextView
+            android:id="@+id/tvHistoryPerf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="3dp"
+            android:text="Good (75%  —  7/10)" />
+
+        <!-- Timeline -->
+        <TextView
+            android:id="@+id/tvHistoryTimeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/button"
+            android:textStyle="bold"
+            android:text="⏱ 4–6 months to first opportunity" />
+
+        <!-- Tap hint -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#AAAAAA"
+            android:gravity="end"
+            android:layout_marginTop="8dp"
+            android:text="Tap to view full roadmap →" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
