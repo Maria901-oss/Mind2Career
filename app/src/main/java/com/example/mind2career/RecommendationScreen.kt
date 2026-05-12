@@ -134,7 +134,7 @@ class RecommendationScreen : AppCompatActivity() {
 
         btnGoHome.setOnClickListener {
             // Go back to the root / home activity
-            val intent = Intent(this, MainActivity::class.java).apply {
+            val intent = Intent(this, home_activity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
             }
             startActivity(intent)

@@ -5,15 +5,21 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.card.MaterialCardView
 
-class home_activity : AppCompatActivity() {
 
+class home_activity : AppCompatActivity() {
+    private lateinit var db: FirebaseFirestore
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
+        db = FirebaseFirestore.getInstance()
+        auth = FirebaseAuth.getInstance()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
@@ -73,13 +79,44 @@ class home_activity : AppCompatActivity() {
                 .create()
 
             btnSubmit.setOnClickListener {
+
                 val rating = ratingBar.rating
 
                 if (rating == 0f) {
+
                     Toast.makeText(this, "Please select rating", Toast.LENGTH_SHORT).show()
+
                 } else {
-                    Toast.makeText(this, "Thanks for rating: $rating ⭐", Toast.LENGTH_SHORT).show()
-                    dialog.dismiss()
+
+                    val userId = auth.currentUser?.uid ?: "anonymous"
+
+                    val ratingData = hashMapOf(
+                        "userId" to userId,
+                        "rating" to rating,
+                        "timestamp" to System.currentTimeMillis()
+                    )
+
+                    db.collection("AppRatings")
+                        .document(userId)
+                        .set(ratingData)
+                        .addOnSuccessListener {
+
+                            Toast.makeText(
+                                this,
+                                "Thanks for rating: $rating ⭐",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            dialog.dismiss()
+                        }
+                        .addOnFailureListener {
+
+                            Toast.makeText(
+                                this,
+                                "Failed to submit rating",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                 }
             }
 
